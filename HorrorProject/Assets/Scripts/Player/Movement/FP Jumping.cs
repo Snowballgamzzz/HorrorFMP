@@ -9,6 +9,7 @@ public class FPJumping : MonoBehaviour
     [SerializeField] float jumpGroundGraceTime = 0.2f;
 
     FPController controller;
+    FPCrouching crouchController;
     PlayerInput playerInput;
     InputAction jumpAction;
 
@@ -20,6 +21,7 @@ public class FPJumping : MonoBehaviour
     void Awake()
     {
         controller = GetComponent<FPController>();
+        crouchController = GetComponent<FPCrouching>();
     }
 
     void Start()
@@ -67,7 +69,7 @@ public class FPJumping : MonoBehaviour
 
         bool jumpAllowed = jumps < 1;
 
-        bool canJump = jumpAllowed && isOrWasTryingToJump && isOrWasGrounded;
+        bool canJump = jumpAllowed && isOrWasTryingToJump && isOrWasGrounded && !crouchController.IsCrouching;
 
         if (canJump)
         {
