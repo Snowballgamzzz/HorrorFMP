@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 [RequireComponent(typeof(FPController))]
 public class FPCrouching : MonoBehaviour
@@ -36,35 +37,38 @@ public class FPCrouching : MonoBehaviour
 
     void OnBeforeMove()
     {
-        var isTryingToCrouch = crouchAction.ReadValue<float>() > 0;
-
-        var heightTarget = isTryingToCrouch ? crouchHeight : standingHeight;
-
-        if (IsCrouching && !isTryingToCrouch)
+        if (!controller.isPaused)
         {
-            var castOrigin = transform.position + new Vector3(0, currentHeight / 2, 0);
-            if (Physics.Raycast(castOrigin, Vector3.up, out RaycastHit hit, 0.2f))
+            var isTryingToCrouch = crouchAction.ReadValue<float>() > 0;
+
+            var heightTarget = isTryingToCrouch ? crouchHeight : standingHeight;
+
+            if (IsCrouching && !isTryingToCrouch)
             {
-                var distanceToCeiling = hit.point.y - castOrigin.y;
-                heightTarget = Mathf.Max(currentHeight + distanceToCeiling - 0.1f, crouchHeight);
+                var castOrigin = transform.position + new Vector3(0, currentHeight / 2, 0);
+                if (Physics.Raycast(castOrigin, Vector3.up, out RaycastHit hit, 0.2f))
+                {
+                    var distanceToCeiling = hit.point.y - castOrigin.y;
+                    heightTarget = Mathf.Max(currentHeight + distanceToCeiling - 0.1f, crouchHeight);
+                }
             }
-        }
 
-        if (!Mathf.Approximately(heightTarget, currentHeight))
-        {
-            var crouchDelta = Time.deltaTime * crouchTransitionSpeed;
-            currentHeight = Mathf.Lerp(currentHeight, heightTarget, crouchDelta);
+            if (!Mathf.Approximately(heightTarget, currentHeight))
+            {
+                var crouchDelta = Time.deltaTime * crouchTransitionSpeed;
+                currentHeight = Mathf.Lerp(currentHeight, heightTarget, crouchDelta);
 
-            var halfHeightDifference = new Vector3(0, (standingHeight - currentHeight) / 2, 0);
-            var newCameraPosition = initialCameraPosition - halfHeightDifference;
+                var halfHeightDifference = new Vector3(0, (standingHeight - currentHeight) / 2, 0);
+                var newCameraPosition = initialCameraPosition - halfHeightDifference;
 
-            controller.cameraTransform.localPosition = newCameraPosition;
-            controller.Height = currentHeight;
-        }
+                controller.cameraTransform.localPosition = newCameraPosition;
+                controller.Height = currentHeight;
+            }
 
-        if (IsCrouching)
-        {
-            controller.movementSpeedMultiplier *= crouchSpeedMultiplier;
+            if (IsCrouching)
+            {
+                controller.movementSpeedMultiplier *= crouchSpeedMultiplier;
+            }
         }
     }
 }
