@@ -4,12 +4,13 @@ using UnityEngine.InputSystem;
 
 public class FPController : MonoBehaviour
 {
-    [SerializeField] float mouseSensitivity = 3f;
+    public float mouseSensitivity = 3f;
     [SerializeField] float movementSpeed = 5f;
     [SerializeField] float mass = 1f;
     [SerializeField] float acceleration = 20f;
     public Transform cameraTransform;
     public bool IsGrounded => controller.isGrounded;
+    public bool isPaused = false;
 
     public float Height
     {
@@ -105,9 +106,12 @@ public class FPController : MonoBehaviour
         var input = GetMovementInput();
 
         //Movement Speed
-        var factor = acceleration * Time.deltaTime;
-        velocity.x = Mathf.Lerp(velocity.x, input.x, factor);
-        velocity.z = Mathf.Lerp(velocity.z, input.z, factor);
+        if (!isPaused)
+        {
+            var factor = acceleration * Time.deltaTime;
+            velocity.x = Mathf.Lerp(velocity.x, input.x, factor);
+            velocity.z = Mathf.Lerp(velocity.z, input.z, factor);
+        }
 
         //character controller movement
         controller.Move(velocity * Time.deltaTime);
