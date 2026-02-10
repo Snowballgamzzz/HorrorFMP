@@ -11,6 +11,7 @@ public class FPController : MonoBehaviour
     public Transform cameraTransform;
     public bool IsGrounded => controller.isGrounded;
     public bool isPaused = false;
+    public bool isAtKeypad = false;
 
     public float Height
     {
@@ -106,7 +107,7 @@ public class FPController : MonoBehaviour
         var input = GetMovementInput();
 
         //Movement Speed
-        if (!isPaused)
+        if (!isPaused || !isAtKeypad)
         {
             var factor = acceleration * Time.deltaTime;
             velocity.x = Mathf.Lerp(velocity.x, input.x, factor);

@@ -37,7 +37,7 @@ public class FPCrouching : MonoBehaviour
 
     void OnBeforeMove()
     {
-        if (!controller.isPaused)
+        if (!controller.isPaused || !controller.isAtKeypad)
         {
             var isTryingToCrouch = crouchAction.ReadValue<float>() > 0;
 
