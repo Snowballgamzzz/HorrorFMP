@@ -38,8 +38,7 @@ public class MenuManager : MonoBehaviour
 
     public void TogglePauseMenu(InputAction.CallbackContext context)
     {
-
-        if (context.performed)
+        if (context.performed && !cam.isAtKeypad)
         {
             if (paused)
             {
