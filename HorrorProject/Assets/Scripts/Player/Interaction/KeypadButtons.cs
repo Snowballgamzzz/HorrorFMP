@@ -126,6 +126,7 @@ public class KeypadButtons : MonoBehaviour
             }
             else if (isButtonOne && !interact.correctCode)
             {
+                Debug.Log("PRESSED");
                 interact.b1();
                 interact.textAmount += 1;
                 isButtonOne = false;
