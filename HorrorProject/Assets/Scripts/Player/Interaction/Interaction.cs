@@ -27,7 +27,7 @@ public class Interaction : MonoBehaviour
     private bool isSafe;
     private bool isKey;
     public bool correctCode = false;
-    public bool playerInteraction;
+    public bool playerInteraction = false;
     public bool raycasted;
     public bool cameraZoomed;
 
@@ -77,13 +77,13 @@ public class Interaction : MonoBehaviour
                 raycastedObj = hit.collider.gameObject.GetComponentInParent<InteractionController>();
                 raycastedKey = hit.collider.gameObject.GetComponentInParent<KeyItemController>();
 
-                if (raycastedObj.typeController == InteractionController.InteractionTypeController.DoorWithNoKey)
+                if (raycastedObj.typeController == InteractionController.InteractionTypeController.DoorWithNoKey && !isDoorWithoutKey)
                 {
                     CrosshairChange(true);
                     isDoorWithoutKey = true;
                 }
 
-                if (raycastedObj.typeController == InteractionController.InteractionTypeController.DoorWithKey)
+                if (raycastedObj.typeController == InteractionController.InteractionTypeController.DoorWithKey && !isDoorWithKey)
                 {
                     CrosshairChange(true);
                     isDoorWithKey = true;
@@ -91,7 +91,8 @@ public class Interaction : MonoBehaviour
 
                 isCrosshairActive = true;
             }
-            else if (hit.collider.CompareTag(keyInteractableTag))
+
+            if (hit.collider.CompareTag(keyInteractableTag))
             {
                 raycastedKey = hit.collider.gameObject.GetComponent<KeyItemController>();
 
@@ -104,7 +105,8 @@ public class Interaction : MonoBehaviour
                 isCrosshairActive = true;
                 isKey = false;
             }
-            else if (hit.collider.CompareTag(keypadInteractableTag))
+
+            if (hit.collider.CompareTag(keypadInteractableTag))
             {
                 raycastedCode = hit.collider.gameObject.GetComponent<CodeController>();
 
@@ -159,6 +161,7 @@ public class Interaction : MonoBehaviour
         if (context.performed && isCrosshairActive && isSafe)
         {
             crosshairImage.SetActive(false);
+            isSafe = false;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             cam.mouseSensitivity = 0f;
@@ -166,8 +169,8 @@ public class Interaction : MonoBehaviour
             playerInteraction = true;
             raycasted = true;
             cameraZoomed = true;
-            CameraZoom();
             cam.isAtKeypad = true;
+            CameraZoom();
         }
     }
 
@@ -184,9 +187,7 @@ public class Interaction : MonoBehaviour
             playerInteraction = false;
             raycasted = false;
             cameraZoomed = false;
-            playerCamera.transform.rotation = camEndObject.transform.rotation;
-            playerCamera.transform.position = camEndObject.transform.position;
-            playerCamera.transform.SetParent(camEndObject.transform);
+            CameraZoom();
             textAmount = 0f;
         }
     }
