@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class KeyItemController : MonoBehaviour
+public class KeyItemController : MonoBehaviour, IInteractable
 {
     [SerializeField] private bool door = false;
     [SerializeField] private bool key = false;
@@ -17,7 +17,7 @@ public class KeyItemController : MonoBehaviour
         }
     }
 
-    public void ObjectInteraction()
+    public void Interact()
     {
         if (door)
         {
