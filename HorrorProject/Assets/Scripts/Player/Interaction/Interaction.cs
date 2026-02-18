@@ -77,12 +77,6 @@ public class Interaction : MonoBehaviour
                 raycastedObj = hit.collider.gameObject.GetComponentInParent<InteractionController>();
                 raycastedKey = hit.collider.gameObject.GetComponentInParent<KeyItemController>();
 
-                if (raycastedObj.typeController == InteractionController.InteractionTypeController.DoorWithNoKey && !isDoorWithoutKey)
-                {
-                    CrosshairChange(true);
-                    isDoorWithoutKey = true;
-                }
-
                 if (raycastedObj.typeController == InteractionController.InteractionTypeController.DoorWithKey && !isDoorWithKey)
                 {
                     CrosshairChange(true);
@@ -90,6 +84,8 @@ public class Interaction : MonoBehaviour
                 }
 
                 isCrosshairActive = true;
+                isDoorWithoutKey = false;
+                isDoorWithKey = false;
             }
 
             if (hit.collider.CompareTag(keyInteractableTag))
@@ -117,7 +113,7 @@ public class Interaction : MonoBehaviour
                 }
 
                 isCrosshairActive = true;
-                //isSafe = false;
+                isSafe = false;
             }
         }
         else
@@ -140,23 +136,6 @@ public class Interaction : MonoBehaviour
 
     public void ToggleDoor(InputAction.CallbackContext context)
     {
-        if (context.performed && isCrosshairActive && isDoorWithoutKey)
-        {
-            raycastedObj.PlayAnimation();
-            isDoorWithoutKey = false;
-        }
-
-        if (context.performed && isCrosshairActive && isDoorWithKey)
-        {
-            raycastedKey.ObjectInteraction();
-            isDoorWithKey = false;
-        }
-
-        if (context.performed && isCrosshairActive && isKey)
-        {
-            raycastedKey.ObjectInteraction();
-            isKey = false;
-        }
 
         if (context.performed && isCrosshairActive && isSafe)
         {
