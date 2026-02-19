@@ -249,7 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b73721670a3ff4f42a5ac6de07758f9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonThree
-  playerCam: {fileID: 1423854712}
+  safeDoor: {fileID: 1254075892}
   isPlayerMouseOverButtonThree: 0
 --- !u!1 &35674056
 GameObject:
@@ -445,6 +445,8 @@ GameObject:
   - component: {fileID: 58151802}
   - component: {fileID: 58151801}
   - component: {fileID: 58151800}
+  - component: {fileID: 58151805}
+  - component: {fileID: 58151806}
   m_Layer: 6
   m_Name: Door
   m_TagString: InteractiveObject
@@ -572,6 +574,45 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 58151798}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &58151805
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58151798}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: db53379dc0465dd4eb0f6adf451bbb1e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &58151806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58151798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f790d168e003546409687c418d5bedb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KeyDoorController
+  timeToShowUI: 1
+  showDoorLockedUI: {fileID: 922453733}
+  inventory: {fileID: 867450308}
+  waitTimer: 1
+  pauseInteraction: 0
 --- !u!1 &115609746
 GameObject:
   m_ObjectHideFlags: 0
@@ -996,7 +1037,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d083f53b45fcd334ba6ed98cb22c6561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonOne
-  playerCam: {fileID: 1423854712}
+  safeDoor: {fileID: 1254075892}
   isPlayerMouseOverButtonOne: 0
 --- !u!1 &156740888
 GameObject:
@@ -1007,10 +1048,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 156740891}
-  - component: {fileID: 156740890}
-  - component: {fileID: 156740892}
-  - component: {fileID: 156740893}
-  - component: {fileID: 156740894}
   m_Layer: 6
   m_Name: SafeObject
   m_TagString: InteractiveKeypad
@@ -1018,28 +1055,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &156740890
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 156740888}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 51f4ecc1270fb464aa9f93b64641a74f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &156740891
 Transform:
   m_ObjectHideFlags: 0
@@ -1061,58 +1076,6 @@ Transform:
   - {fileID: 299743864}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &156740892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 156740888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f96af8695a091c142a522c418bc50f0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InteractionController
-  typeController: 0
-  timeToShowUI: 1
-  showDoorLockedUI: {fileID: 922453733}
-  inventory: {fileID: 867450308}
-  waitTimer: 1
-  pauseInteraction: 0
---- !u!65 &156740893
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 156740888}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.0966237, y: 1, z: 1.0989609}
-  m_Center: {x: -0.0023590326, y: 0, z: 0.007212162}
---- !u!114 &156740894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 156740888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e5a142311a0acb49a20dac48c06a3c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CodeController
-  door: {fileID: 156740888}
 --- !u!1 &229711742
 GameObject:
   m_ObjectHideFlags: 0
@@ -1859,7 +1822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5088875b7828c6046990a254b1ee63cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonEight
-  playerCam: {fileID: 1423854712}
+  safeDoor: {fileID: 1254075892}
   isPlayerMouseOverButtonEight: 0
 --- !u!1 &485025114
 GameObject:
@@ -2358,7 +2321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e05f1ef9ed46d364f952e8f1091fa703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonNine
-  playerCam: {fileID: 1423854712}
+  safeDoor: {fileID: 1254075892}
   isPlayerMouseOverButtonNine: 0
 --- !u!1 &663314897
 GameObject:
@@ -2369,9 +2332,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 663314900}
-  - component: {fileID: 663314899}
-  - component: {fileID: 663314898}
-  - component: {fileID: 663314901}
   m_Layer: 6
   m_Name: DoorObject
   m_TagString: InteractiveObject
@@ -2379,46 +2339,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &663314898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 663314897}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f96af8695a091c142a522c418bc50f0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InteractionController
-  typeController: 1
-  timeToShowUI: 1
-  showDoorLockedUI: {fileID: 922453733}
-  inventory: {fileID: 867450308}
-  waitTimer: 1
-  pauseInteraction: 0
---- !u!95 &663314899
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 663314897}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: db53379dc0465dd4eb0f6adf451bbb1e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &663314900
 Transform:
   m_ObjectHideFlags: 0
@@ -2437,21 +2357,6 @@ Transform:
   - {fileID: 1507542241}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &663314901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 663314897}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ecd8c1fc0fa0d54296437a992f458be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::KeyItemController
-  door: 1
-  key: 0
-  inventory: {fileID: 867450308}
 --- !u!1 &680289684
 GameObject:
   m_ObjectHideFlags: 0
@@ -3056,7 +2961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f173a5442ac02af499f37ccd7f26c058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonClear
-  playerCam: {fileID: 1423854712}
+  safeDoor: {fileID: 1254075892}
   isPlayerMouseOverButtonClear: 0
 --- !u!1 &862282056
 GameObject:
@@ -3404,7 +3309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c06629455010f84c91c3ea9962a1253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonEnter
-  playerCam: {fileID: 1423854712}
+  safeDoor: {fileID: 1254075892}
   isPlayerMouseOverButtonEnter: 0
 --- !u!1 &885127527
 GameObject:
@@ -3536,7 +3441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27f5973f7c3c37b4e934dcc0636067db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonFour
-  playerCam: {fileID: 1423854712}
+  safeDoor: {fileID: 1254075892}
   isPlayerMouseOverButtonFour: 0
 --- !u!1 &893880949
 GameObject:
@@ -3668,7 +3573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6c377a3a10110143b83db57db01b02c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonDelete
-  playerCam: {fileID: 1423854712}
+  safeDoor: {fileID: 1254075892}
   isPlayerMouseOverButtonDelete: 0
 --- !u!1 &917181288
 GameObject:
@@ -4407,7 +4312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c7b4de0cfdd95489b435758270b48b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonTwo
-  playerCam: {fileID: 1423854712}
+  safeDoor: {fileID: 1254075892}
   isPlayerMouseOverButtonTwo: 0
 --- !u!1 &1071093206
 GameObject:
@@ -4755,6 +4660,8 @@ GameObject:
   - component: {fileID: 1254075896}
   - component: {fileID: 1254075895}
   - component: {fileID: 1254075894}
+  - component: {fileID: 1254075898}
+  - component: {fileID: 1254075897}
   m_Layer: 6
   m_Name: Door
   m_TagString: Untagged
@@ -4797,8 +4704,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.0010676, y: 1, z: 1}
+  m_Center: {x: -0.00053379685, y: 0, z: 0}
 --- !u!23 &1254075895
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4856,6 +4763,64 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1254075892}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1254075897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254075892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7a89af473c36414c920544223d5c592, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SafeController
+  player: {fileID: 1451269686}
+  camStartObject: {fileID: 1016072589}
+  camEndObject: {fileID: 563703770}
+  playerCamera: {fileID: 1423854712}
+  cameraStartRotation: {fileID: 1016072590}
+  cameraEndRotation: {fileID: 563703771}
+  crosshairImage: {fileID: 1872506144}
+  correctCode: 0
+  playerCanInteract: 0
+  cameraZoomed: 0
+  charHolder: {fileID: 485025117}
+  buttonOne: {fileID: 128045791}
+  buttonTwo: {fileID: 1050218994}
+  buttonThree: {fileID: 4564140}
+  buttonFour: {fileID: 885127527}
+  buttonFive: {fileID: 1567399355}
+  buttonSix: {fileID: 1813667585}
+  buttonSeven: {fileID: 1575824312}
+  buttonEight: {fileID: 438201162}
+  buttonNine: {fileID: 633508001}
+  buttonZero: {fileID: 1339019581}
+  clearButton: {fileID: 831440710}
+  enterButton: {fileID: 885089359}
+  textAmount: 0
+--- !u!95 &1254075898
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254075892}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 51f4ecc1270fb464aa9f93b64641a74f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1323127459
 GameObject:
   m_ObjectHideFlags: 0
@@ -5113,7 +5078,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 143eca1387a64e044a29a483359db645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonZero
-  playerCam: {fileID: 1423854712}
+  safeDoor: {fileID: 1254075892}
   isPlayerMouseOverButtonZero: 0
 --- !u!1 &1378430338
 GameObject:
@@ -5589,41 +5554,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1423854712}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d0866236be8a454193ffc732f64ac9a, type: 3}
+  m_Script: {fileID: 11500000, guid: ac2787d29836fe7418a0ab5a31714358, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Interaction
-  rayLength: 5
-  layerMaskInteract:
-    serializedVersion: 2
-    m_Bits: 64
-  excludeLayerName: 
-  cameraMoveSpeed: 1
-  player: {fileID: 1451269686}
-  crosshair: {fileID: 1872506146}
-  crosshairImage: {fileID: 1872506144}
-  correctCode: 0
-  playerInteraction: 0
-  raycasted: 0
-  cameraZoomed: 0
-  charHolder: {fileID: 485025117}
-  button1: {fileID: 128045791}
-  button2: {fileID: 1050218994}
-  button3: {fileID: 4564140}
-  button4: {fileID: 885127527}
-  button5: {fileID: 1567399355}
-  button6: {fileID: 1813667585}
-  button7: {fileID: 1575824312}
-  button8: {fileID: 438201162}
-  button9: {fileID: 633508001}
-  button0: {fileID: 1339019581}
-  clearButton: {fileID: 831440710}
-  enterButton: {fileID: 885089359}
-  textAmount: 0
-  camStartObject: {fileID: 1016072589}
-  camEndObject: {fileID: 563703770}
-  playerCamera: {fileID: 1423854712}
-  cameraStartRotation: {fileID: 1016072590}
-  cameraEndRotation: {fileID: 2055243750}
+  m_EditorClassIdentifier: Assembly-CSharp::Interactor
+  InteractorSource: {fileID: 1423854715}
+  InteractRange: 5
 --- !u!1 &1451269686
 GameObject:
   m_ObjectHideFlags: 0
@@ -5795,8 +5730,8 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1423854717}
-        m_TargetAssemblyTypeName: Interaction, Assembly-CSharp
-        m_MethodName: ToggleDoor
+        m_TargetAssemblyTypeName: Interactor, Assembly-CSharp
+        m_MethodName: InteractToggle
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5970,8 +5905,8 @@ MonoBehaviour:
     m_ActionName: 'Player/Press[/Mouse/leftButton]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1423854717}
-        m_TargetAssemblyTypeName: Interaction, Assembly-CSharp
+      - m_Target: {fileID: 1254075897}
+        m_TargetAssemblyTypeName: SafeController, Assembly-CSharp
         m_MethodName: ToggleEscape
         m_Mode: 0
         m_Arguments:
@@ -6380,7 +6315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f989a232664e8c4582790a2fd4aeaab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonFive
-  playerCam: {fileID: 1423854712}
+  safeDoor: {fileID: 1254075892}
   isPlayerMouseOverButtonFive: 0
 --- !u!1 &1575824312
 GameObject:
@@ -6512,7 +6447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fef7c8ab2ea99445a00e00e58b4a32d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonSeven
-  playerCam: {fileID: 1423854712}
+  safeDoor: {fileID: 1254075892}
   isPlayerMouseOverButtonSeven: 0
 --- !u!1 &1584649694
 GameObject:
@@ -7005,7 +6940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0222a09f0a52f145b0816f60142b2ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonSix
-  playerCam: {fileID: 1423854712}
+  safeDoor: {fileID: 1254075892}
   isPlayerMouseOverButtonSix: 0
 --- !u!1 &1826850935
 GameObject:

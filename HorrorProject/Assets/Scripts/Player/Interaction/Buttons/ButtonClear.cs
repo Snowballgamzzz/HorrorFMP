@@ -3,14 +3,14 @@ using UnityEngine.InputSystem;
 
 public class ButtonClear : MonoBehaviour
 {
-    Interaction interactor;
-    public GameObject playerCam;
+    SafeController controller;
+    public GameObject safeDoor;
 
     public bool isPlayerMouseOverButtonClear = false;
 
     private void Start()
     {
-        interactor = playerCam.GetComponent<Interaction>();
+        controller = safeDoor.GetComponent<SafeController>();
     }
 
     private void OnMouseOver()
@@ -27,9 +27,9 @@ public class ButtonClear : MonoBehaviour
     {
         if (context.performed && isPlayerMouseOverButtonClear)
         {
-            interactor.clearEvent();
-            interactor.textAmount = 0;
-            interactor.playerInteraction = true;
+            controller.clearEvent();
+            controller.textAmount = 0;
+            controller.playerCanInteract = true;
         }
     }
 }

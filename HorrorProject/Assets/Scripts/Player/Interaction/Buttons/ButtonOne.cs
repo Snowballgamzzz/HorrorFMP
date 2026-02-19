@@ -3,14 +3,14 @@ using UnityEngine.InputSystem;
 
 public class ButtonOne : MonoBehaviour
 {
-    Interaction interactor;
-    public GameObject playerCam;
+    SafeController controller;
+    public GameObject safeDoor;
 
     public bool isPlayerMouseOverButtonOne = false;
 
     private void Start()
     {
-        interactor = playerCam.GetComponent<Interaction>();
+        controller = safeDoor.GetComponent<SafeController>();
     }
 
     private void OnMouseOver()
@@ -25,10 +25,10 @@ public class ButtonOne : MonoBehaviour
 
     public void ButtonOnePress(InputAction.CallbackContext context)
     {
-        if (context.performed && isPlayerMouseOverButtonOne && interactor.playerInteraction)
+        if (context.performed && isPlayerMouseOverButtonOne && controller.playerCanInteract)
         {
-            interactor.b1();
-            interactor.textAmount += 1;
+            controller.b1();
+            controller.textAmount += 1;
         }
     }
 }

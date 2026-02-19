@@ -3,14 +3,14 @@ using UnityEngine.InputSystem;
 
 public class ButtonDelete : MonoBehaviour
 {
-    Interaction interactor;
-    public GameObject playerCam;
+    SafeController controller;
+    public GameObject safeDoor;
 
     public bool isPlayerMouseOverButtonDelete = false;
 
     private void Start()
     {
-        interactor = playerCam.GetComponent<Interaction>();
+        controller = safeDoor.GetComponent<SafeController>();
     }
 
     private void OnMouseOver()
@@ -27,8 +27,8 @@ public class ButtonDelete : MonoBehaviour
     {
         if (context.performed && isPlayerMouseOverButtonDelete)
         {
-            interactor.deleteEvent();
-            interactor.textAmount -= 1;
+            controller.deleteEvent();
+            controller.textAmount -= 1;
         }
     }
 }
