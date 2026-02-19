@@ -3,14 +3,14 @@ using UnityEngine.InputSystem;
 
 public class ButtonEnter : MonoBehaviour
 {
-    Interaction interactor;
-    public GameObject playerCam;
+    SafeController controller;
+    public GameObject safeDoor;
 
     public bool isPlayerMouseOverButtonEnter = false;
 
     private void Start()
     {
-        interactor = playerCam.GetComponent<Interaction>();
+        controller = safeDoor.GetComponent<SafeController>();
     }
 
     private void OnMouseOver()
@@ -27,7 +27,7 @@ public class ButtonEnter : MonoBehaviour
     {
         if (context.performed && isPlayerMouseOverButtonEnter)
         {           
-            interactor.enterEvent();
+            controller.enterEvent();
         }
     }
 }

@@ -12,11 +12,6 @@ public class DoorController : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        PlayAnimation();
-    }
-
-    private void PlayAnimation()
-    {
         if (!isDoorOpen)
         {
             doorAnim.Play("DoorOpen", 0, 0.0f);
