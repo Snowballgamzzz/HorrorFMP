@@ -12,12 +12,14 @@ public class FPController : MonoBehaviour
     public bool IsGrounded => controller.isGrounded;
     public bool isPaused = false;
     public bool isAtKeypad = false;
+    public bool isAtPC = false;
 
     public float Height
     {
         get => controller.height;
         set => controller.height = value;
     }
+
 
     public event Action OnBeforeMove;
     public event Action<bool> OnGroundStateChange;
@@ -107,7 +109,7 @@ public class FPController : MonoBehaviour
         var input = GetMovementInput();
 
         //Movement Speed
-        if (!isPaused || !isAtKeypad)
+        if (!isPaused || !isAtKeypad || !isAtPC)
         {
             var factor = acceleration * Time.deltaTime;
             velocity.x = Mathf.Lerp(velocity.x, input.x, factor);
