@@ -69,7 +69,7 @@ public class FPJumping : MonoBehaviour
 
         bool jumpAllowed = jumps < 1;
 
-        bool canJump = jumpAllowed && isOrWasTryingToJump && isOrWasGrounded && !crouchController.IsCrouching && !controller.isPaused && !controller.isAtKeypad;
+        bool canJump = jumpAllowed && isOrWasTryingToJump && isOrWasGrounded && !crouchController.IsCrouching && !controller.isPaused && !controller.isAtKeypad && !controller.isAtPC;
 
         if (canJump)
         {
