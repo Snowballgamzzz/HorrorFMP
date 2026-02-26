@@ -36,12 +36,12 @@ public class PCController : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        logInScreen.SetActive(true);
-        crosshair.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         cam.mouseSensitivity = 0f;
         cam.isAtPC = true;
+        logInScreen.SetActive(true);
+        crosshair.SetActive(false);
     }
 
     public void LogInCheck()
@@ -50,6 +50,7 @@ public class PCController : MonoBehaviour, IInteractable
         {
             homeScreen.SetActive(true);
             logInScreen.SetActive(false);
+            isPlayerAtHomeScreen = true;
         }
         else
         {
@@ -92,7 +93,7 @@ public class PCController : MonoBehaviour, IInteractable
 
     public void ToggleEscape(InputAction.CallbackContext context)
     {
-        if (context.performed && cam.isAtKeypad)
+        if (context.performed && cam.isAtPC)
         {
             crosshair.SetActive(true);
 
@@ -105,6 +106,10 @@ public class PCController : MonoBehaviour, IInteractable
             {
                 lockDownScreen.SetActive(false);
                 isPlayerAtlockDownScreen = false;
+            }
+            else
+            {
+                logInScreen.SetActive(false);
             }
 
             Cursor.lockState = CursorLockMode.Locked;

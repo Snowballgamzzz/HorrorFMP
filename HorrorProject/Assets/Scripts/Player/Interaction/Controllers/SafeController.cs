@@ -7,6 +7,7 @@ public class SafeController : MonoBehaviour, IInteractable
 {
     [Header("References")]
     public GameObject player;
+    public GameObject gun;
     FPController cam;
     private Animator safeAnim;
 
@@ -51,6 +52,7 @@ public class SafeController : MonoBehaviour, IInteractable
     public void Interact()
     {
         crosshairImage.SetActive(false);
+        gun.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         cam.mouseSensitivity = 0f;
@@ -65,6 +67,7 @@ public class SafeController : MonoBehaviour, IInteractable
         if (context.performed && cam.isAtKeypad)
         {
             crosshairImage.SetActive(true);
+            gun.SetActive(true);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             cam.mouseSensitivity = 3f;
@@ -169,6 +172,7 @@ public class SafeController : MonoBehaviour, IInteractable
             cam.mouseSensitivity = 3f;
             playerCanInteract = false;
             crosshairImage.SetActive(true);
+            gun.SetActive(true);
             correctCode = true;
             cameraZoomed = false;
             CameraZoom();
