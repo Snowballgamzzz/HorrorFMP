@@ -109,7 +109,7 @@ public class FPController : MonoBehaviour
         var input = GetMovementInput();
 
         //Movement Speed
-        if (!isPaused || !isAtKeypad || !isAtPC)
+        if (!isPaused && !isAtKeypad && !isAtPC)
         {
             var factor = acceleration * Time.deltaTime;
             velocity.x = Mathf.Lerp(velocity.x, input.x, factor);
