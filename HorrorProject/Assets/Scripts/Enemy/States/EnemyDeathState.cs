@@ -9,7 +9,7 @@ public class EnemyDeathState : AIState
 
     public void Enter(EnemyAgent agent)
     {
-        
+        agent.DestoryObject();
     }
 
     public void Update(EnemyAgent agent)

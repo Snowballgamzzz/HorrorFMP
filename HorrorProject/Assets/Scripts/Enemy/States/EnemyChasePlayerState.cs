@@ -45,6 +45,11 @@ public class EnemyChasePlayerState : AIState
                 }
             }
 
+            if (agent.isCollidingWithPlayer)
+            {
+                agent.stateMachine.ChangeState(AIStateId.AttackPlayer);
+            }
+
             timer = agent.config.maxTime;
         }
     }
