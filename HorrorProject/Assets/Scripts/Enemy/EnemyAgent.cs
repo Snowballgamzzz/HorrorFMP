@@ -8,7 +8,6 @@ public class EnemyAgent : MonoBehaviour
     public AIStateId initialState;
     public NavMeshAgent navMeshAgent;
     public EnemyAgentConfig config;
-    public EnemySensor sensor;
     public Transform playerTransform;
     public bool isCollidingWithPlayer;
     public PlayerHealth playerHealth;
@@ -23,7 +22,6 @@ public class EnemyAgent : MonoBehaviour
         stateMachine.RegisterState(new EnemyAttackPlayerState());
         stateMachine.ChangeState(initialState);
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        sensor = GetComponent<EnemySensor>();
         isCollidingWithPlayer = false;
     }
 
