@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using UnityEngine.AI;
 
 public class EnemyAgent : MonoBehaviour
@@ -7,7 +8,10 @@ public class EnemyAgent : MonoBehaviour
     public AIStateId initialState;
     public NavMeshAgent navMeshAgent;
     public EnemyAgentConfig config;
+    public EnemySensor sensor;
     public Transform playerTransform;
+    public bool isCollidingWithPlayer;
+    public PlayerHealth playerHealth;
 
     private void Start()
     {
@@ -16,12 +20,37 @@ public class EnemyAgent : MonoBehaviour
         stateMachine.RegisterState(new EnemyChasePlayerState());
         stateMachine.RegisterState(new EnemyDeathState());
         stateMachine.RegisterState(new EnemyIdleState());
+        stateMachine.RegisterState(new EnemyAttackPlayerState());
         stateMachine.ChangeState(initialState);
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        sensor = GetComponent<EnemySensor>();
+        isCollidingWithPlayer = false;
     }
 
     private void Update()
     {
         stateMachine.Update();
+    }
+
+    public void DestoryObject()
+    {
+        Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            isCollidingWithPlayer = true;
+            playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            isCollidingWithPlayer = false;
+        }
     }
 }

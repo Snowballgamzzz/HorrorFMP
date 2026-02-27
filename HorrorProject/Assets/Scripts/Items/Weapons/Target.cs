@@ -2,13 +2,19 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
-    public float health;
+    EnemyAgent agent;
+
+    public void Start()
+    {
+        agent = GetComponent<EnemyAgent>();
+    }
+
 
     public void TakeDamage(float amount)
     {
-        health -= amount;
+        agent.config.enemyHealth -= amount;
 
-        if (health <= 0f)
+        if (agent.config.enemyHealth <= 0f)
         {
             Die();
         }
@@ -16,6 +22,7 @@ public class Target : MonoBehaviour
 
     public void Die()
     {
-        Destroy(gameObject);
+        EnemyDeathState deathState = agent.stateMachine.GetState(AIStateId.Death) as EnemyDeathState;
+        agent.stateMachine.ChangeState(AIStateId.Death);
     }
 }
