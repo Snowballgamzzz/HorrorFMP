@@ -3,7 +3,8 @@ public enum AIStateId
 ChasePlayer,
 Death,
 Idle,
-AttackPlayer
+AttackPlayer,
+Roaming
 }
 
 public interface AIState
