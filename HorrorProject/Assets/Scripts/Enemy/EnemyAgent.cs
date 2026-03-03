@@ -11,6 +11,7 @@ public class EnemyAgent : MonoBehaviour
     public Transform playerTransform;
     public bool isCollidingWithPlayer;
     public PlayerHealth playerHealth;
+    public float range;
 
     private void Start()
     {
@@ -20,6 +21,7 @@ public class EnemyAgent : MonoBehaviour
         stateMachine.RegisterState(new EnemyDeathState());
         stateMachine.RegisterState(new EnemyIdleState());
         stateMachine.RegisterState(new EnemyAttackPlayerState());
+        stateMachine.RegisterState(new EnemyRoamingState());
         stateMachine.ChangeState(initialState);
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         isCollidingWithPlayer = false;

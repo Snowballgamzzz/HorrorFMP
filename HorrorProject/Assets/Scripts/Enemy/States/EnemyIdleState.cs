@@ -27,7 +27,7 @@ public class EnemyIdleState : AIState
         float dotProduct = Vector3.Dot(playerDirection, agentDirection);
         if (dotProduct > 0.0f)
         {
-            agent.stateMachine.ChangeState(AIStateId.ChasePlayer);
+            //agent.stateMachine.ChangeState(AIStateId.ChasePlayer);
         }
     }
 
