@@ -9,6 +9,10 @@ public class Target : MonoBehaviour
         agent = GetComponent<EnemyAgent>();
     }
 
+    void Update()
+    {
+        Mathf.Clamp(agent.config.enemyHealth, 0, agent.config.enemyHealth);
+    }
 
     public void TakeDamage(float amount)
     {

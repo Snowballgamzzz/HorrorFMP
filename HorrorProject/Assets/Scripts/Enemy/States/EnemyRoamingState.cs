@@ -16,13 +16,13 @@ public class EnemyRoamingState : AIState
     {
         Roaming(agent);
 
-        Vector3 playerDirection = agent.playerTransform.position - agent.transform.position;
+        Vector3 playerDirection = agent.playerTransform.position - agent.transform.forward;
         if (playerDirection.magnitude > agent.config.maxSightDistance)
         {
             return;
         }
 
-        Vector3 agentDirection = agent.transform.forward;
+        Vector3 agentDirection = agent.transform.position;
 
         playerDirection.Normalize();
 
