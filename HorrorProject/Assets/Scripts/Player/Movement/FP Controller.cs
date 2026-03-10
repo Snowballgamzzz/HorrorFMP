@@ -13,6 +13,7 @@ public class FPController : MonoBehaviour
     public bool isPaused = false;
     public bool isAtKeypad = false;
     public bool isAtPC = false;
+    public bool isInspectingDocument = false;
 
     public float Height
     {
@@ -109,7 +110,7 @@ public class FPController : MonoBehaviour
         var input = GetMovementInput();
 
         //Movement Speed
-        if (!isPaused && !isAtKeypad && !isAtPC)
+        if (!isPaused && !isAtKeypad && !isAtPC && !isInspectingDocument)
         {
             var factor = acceleration * Time.deltaTime;
             velocity.x = Mathf.Lerp(velocity.x, input.x, factor);
