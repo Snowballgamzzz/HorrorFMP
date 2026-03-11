@@ -11,10 +11,12 @@ public class Flashlight : MonoBehaviour
         if (isFlashlightOn)
         {
             flashlight.SetActive(false);
+            isFlashlightOn = false;
         }
         else
         {
             flashlight.SetActive(true);
+            isFlashlightOn = true;
         }
     }
 }
