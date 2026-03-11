@@ -37,7 +37,6 @@ public class Gun : MonoBehaviour
     private void Update()
     {
         Mathf.Clamp(currentClip, 0, maxClip);
-        Mathf.Clamp(currentAmmo, 0, maxAmmo);
 
         currentAmmoString = currentAmmo.ToString();
         currentClipString = currentClip.ToString();
@@ -54,7 +53,7 @@ public class Gun : MonoBehaviour
                 return;
             }
 
-            if (currentAmmo <= 0 && currentClip <= 0)
+            if (currentAmmo <= 0 && currentClip >= 0)
             {
                 StartCoroutine(ReloadTimer());
                 return;
@@ -74,7 +73,9 @@ public class Gun : MonoBehaviour
                     }
                 }
 
+                Mathf.Clamp(currentAmmo, 0, maxAmmo);
                 currentAmmo--;
+                
 
             }
         }
