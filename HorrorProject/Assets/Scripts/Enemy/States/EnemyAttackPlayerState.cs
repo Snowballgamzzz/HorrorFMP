@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class EnemyAttackPlayerState : AIState
@@ -16,7 +17,12 @@ public class EnemyAttackPlayerState : AIState
     {
         agent.navMeshAgent.destination = agent.playerTransform.position;
 
-        agent.playerHealth.health -= agent.config.damage;
+        if (agent.canAttack)
+        {
+            agent.playerHealth.health -= agent.config.damage;
+            agent.playerHealth.healthBar.value = agent.playerHealth.health;
+            agent.StartCoroutine(agent.attackCoolDown());
+        }
 
         if (!agent.isCollidingWithPlayer)
         {

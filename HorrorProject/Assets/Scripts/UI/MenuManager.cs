@@ -24,6 +24,8 @@ public class MenuManager : MonoBehaviour
     public GameObject backButton;
     public GameObject quitButton;
     public GameObject optionsButton;
+    public GameObject healthBar;
+    public GameObject ammo;
 
     FPController cam;
 
@@ -54,6 +56,8 @@ public class MenuManager : MonoBehaviour
     public void Stop()
     {
         pauseMenuCanvas.SetActive(true);
+        healthBar.SetActive(false);
+        ammo.SetActive(false);
         paused = true;
         cam.isPaused = true;
         Cursor.lockState = CursorLockMode.None;
@@ -64,6 +68,8 @@ public class MenuManager : MonoBehaviour
     public void Play()
     {
         pauseMenuCanvas.SetActive(false);
+        healthBar.SetActive(true);
+        ammo.SetActive(true);
         paused = false;
         cam.isPaused = false;
         Cursor.lockState = CursorLockMode.Locked;
