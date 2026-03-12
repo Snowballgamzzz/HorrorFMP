@@ -15,5 +15,5 @@ MonoBehaviour:
   maxTime: 2
   maxDistance: 1
   maxSightDistance: 1
-  enemyHealth: 20
+  enemyHealth: 18
   damage: 5

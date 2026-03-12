@@ -20,6 +20,7 @@ public class EnemySensor : MonoBehaviour
     {
         if (playerIsNear)
         {
+            this.gameObject.SetActive(false);
             agent.stateMachine.ChangeState(AIStateId.ChasePlayer);
         }
     }
