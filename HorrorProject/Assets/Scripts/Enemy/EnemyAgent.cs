@@ -11,6 +11,7 @@ public class EnemyAgent : MonoBehaviour
     public Transform playerTransform;
     public bool isCollidingWithPlayer;
     public PlayerHealth playerHealth;
+    public FPController controller;
     public float range;
 
     private void Start()
@@ -24,12 +25,22 @@ public class EnemyAgent : MonoBehaviour
         stateMachine.RegisterState(new EnemyRoamingState());
         stateMachine.ChangeState(initialState);
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        controller = GameObject.FindGameObjectWithTag("Player").GetComponent<FPController>();
         isCollidingWithPlayer = false;
     }
 
     private void Update()
     {
         stateMachine.Update();
+
+        if (controller.isPaused || controller.isAtPC || controller.isAtKeypad || controller.isInspectingDocument)
+        {
+            navMeshAgent.isStopped = true;
+        }
+        else
+        {
+            navMeshAgent.isStopped = false;
+        }
     }
 
     public void DestoryObject()
