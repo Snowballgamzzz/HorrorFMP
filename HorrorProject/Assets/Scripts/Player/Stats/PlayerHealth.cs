@@ -5,6 +5,7 @@ public class PlayerHealth : MonoBehaviour
 {
     //[Range(0f, 100f)]
     public float health;
+    public float maxHealth;
 
     public Slider healthBar;
 

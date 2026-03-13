@@ -104,6 +104,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Document Inspector",
+                    "type": "Button",
+                    "id": "1f422bf9-dedb-4c43-8bbc-bc9955e82ad6",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -263,17 +272,6 @@
                 },
                 {
                     "name": "",
-                    "id": "d2f06b24-96cb-48fb-9b8e-5b59ce1c4a83",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Reload",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "6cdc6023-d5f9-4734-8c1f-bbd36b2374f9",
                     "path": "<Keyboard>/r",
                     "interactions": "",
@@ -302,6 +300,17 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "Flashlight Toggle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "88f6aad7-8862-416c-a169-a9cceeb0a412",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Document Inspector",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
