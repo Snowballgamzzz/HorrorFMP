@@ -8,6 +8,8 @@ public class InventoryManager : MonoBehaviour
     private bool menuActivated;
     public ItemSlot[] itemSlot;
 
+    public ItemSO[] itemSOs;
+
     public void ToggleInventory(InputAction.CallbackContext context)
     {
         if (context.performed && menuActivated)
@@ -22,6 +24,19 @@ public class InventoryManager : MonoBehaviour
             InventoryMenu.SetActive(true);
             menuActivated = true;
         }
+    }
+
+    public bool UseItem(string itemName)
+    {
+        for (int i = 0; i < itemSOs.Length; i++)
+        {
+            if (itemSOs[i].itemName == itemName)
+            {
+                bool usable = itemSOs[i].UseItem();
+                return usable;
+            }
+        }
+        return false;
     }
 
     public int AddItem(string itemName, int quantity, Image itemImage, string itemDescription)
