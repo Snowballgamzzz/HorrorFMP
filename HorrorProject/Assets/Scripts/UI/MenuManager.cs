@@ -3,8 +3,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.Audio;
-using NUnit.Framework;
 using System.Collections.Generic;
+using TMPro;
 
 public class MenuManager : MonoBehaviour
 {
@@ -39,7 +39,7 @@ public class MenuManager : MonoBehaviour
     public AudioMixer audioMixer;
 
     [Header("Dropdown")]
-    public Dropdown resolutionDropdown;
+    public TMP_Dropdown resolutionDropdown;
 
     [Header("Resolution")]
     Resolution[] resolutions;
@@ -65,7 +65,7 @@ public class MenuManager : MonoBehaviour
             string option = resolutions[i].width + " x " + resolutions[i].height;
             options.Add(option);
 
-            if (resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
+            if (resolutions[i].width == Screen.width && resolutions[i].height == Screen.height)
             {
                 currentResolutionIndex = i;
             }
