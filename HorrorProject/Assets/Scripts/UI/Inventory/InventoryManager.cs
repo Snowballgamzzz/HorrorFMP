@@ -17,12 +17,16 @@ public class InventoryManager : MonoBehaviour
             Time.timeScale = 1;
             InventoryMenu.SetActive(false);
             menuActivated = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
         else if (context.performed && !menuActivated)
         {
             Time.timeScale = 0;
             InventoryMenu.SetActive(true);
             menuActivated = true;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 
@@ -50,8 +54,8 @@ public class InventoryManager : MonoBehaviour
                 {
                     leftOverItems = AddItem(itemName, leftOverItems, itemImage, itemDescription);
 
-                    return leftOverItems;
                 }
+                return leftOverItems;
             }
         }
 

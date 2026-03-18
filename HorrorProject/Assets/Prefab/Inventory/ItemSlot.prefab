@@ -175,7 +175,7 @@ MonoBehaviour:
   maxNumberOfItems: 0
   quantityText: {fileID: 2761908252675347808}
   visualImage: {fileID: 7613367254723924645}
-  selectedShader: {fileID: 0}
+  selectedShader: {fileID: 150050504364693629}
   thisItemSelected: 0
   itemDescriptionImage: {fileID: 0}
   itemDescriptionNameText: {fileID: 0}

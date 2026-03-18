@@ -3,35 +3,16 @@ using UnityEngine;
 
 public class AmmoBox : MonoBehaviour, IInteractable
 {
-    public GameObject playerWeapon;
-    public GameObject ammoFullUI;
-    Gun playerGun;
-
-    public int timeToShowUI = 1;
+    Item item;
 
     void Start()
     {
-        playerGun = playerWeapon.GetComponent<Gun>();
+        item = GetComponent<Item>();
     }
 
     public void Interact()
     {
-        if (playerGun.currentClip < playerGun.maxClip)
-        {
-            int additionalAmmo = Random.Range(1, 10);
-            playerGun.currentClip += additionalAmmo;
-            gameObject.SetActive(false);
-        }
-        else
-        {
-            StartCoroutine(ShowAmmoFull());
-        }
-    }
-
-    IEnumerator ShowAmmoFull()
-    {
-        ammoFullUI.SetActive(true);
-        yield return new WaitForSeconds(timeToShowUI);
-        ammoFullUI.SetActive(false);
+        item.PickUpItem();
+        Destroy(this.gameObject);
     }
 }
