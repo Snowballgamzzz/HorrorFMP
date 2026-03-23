@@ -30,7 +30,7 @@ public class InventoryManager : MonoBehaviour
             controller.mouseSensitivity = 3;
             DeselectAllSlots();
         }
-        else if (context.performed && !menuActivated && !controller.isPaused && !controller.isAtPC)
+        else if (context.performed && !menuActivated && !controller.isPaused && !controller.isAtPC && !controller.isInspectingDocument && !controller.isAtKeypad)
         {
             Time.timeScale = 0;
             InventoryMenu.SetActive(true);
