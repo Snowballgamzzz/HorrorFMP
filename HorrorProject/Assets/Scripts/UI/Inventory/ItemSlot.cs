@@ -124,5 +124,10 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         itemDescriptionNameText.text = "";
         itemDescriptionText.text = "";
         itemDescriptionImage.sprite = emptyImageSlot.sprite;
+        itemDescription = "";
+
+        itemName = "";
+        quantity = 0;
+        isFull = false;
     }
 }

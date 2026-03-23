@@ -10,6 +10,8 @@ public class PCController : MonoBehaviour, IInteractable
 
     [Header("PlayerUI")]
     public GameObject crosshair;
+    public GameObject playerHealth;
+    public GameObject playerAmmo;
 
     [Header("PC UI")]
     public GameObject logInScreen;
@@ -42,6 +44,8 @@ public class PCController : MonoBehaviour, IInteractable
         cam.isAtPC = true;
         logInScreen.SetActive(true);
         crosshair.SetActive(false);
+        playerAmmo.SetActive(false);
+        playerHealth.SetActive(false);
     }
 
     public void LogInCheck()
@@ -116,6 +120,8 @@ public class PCController : MonoBehaviour, IInteractable
             Cursor.visible = false;
             cam.mouseSensitivity = 3f;
             cam.isAtPC = false;
+            playerAmmo.SetActive(true);
+            playerHealth.SetActive(true);
 
         }
     }

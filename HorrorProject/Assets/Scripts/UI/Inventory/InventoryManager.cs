@@ -10,6 +10,14 @@ public class InventoryManager : MonoBehaviour
 
     public ItemSO[] itemSOs;
 
+    public GameObject player;
+    FPController controller;
+
+    private void Start()
+    {
+        controller = player.GetComponent<FPController>();
+    }
+
     public void ToggleInventory(InputAction.CallbackContext context)
     {
         if (context.performed && menuActivated)
@@ -19,14 +27,17 @@ public class InventoryManager : MonoBehaviour
             menuActivated = false;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+            controller.mouseSensitivity = 3;
+            DeselectAllSlots();
         }
-        else if (context.performed && !menuActivated)
+        else if (context.performed && !menuActivated && !controller.isPaused && !controller.isAtPC)
         {
             Time.timeScale = 0;
             InventoryMenu.SetActive(true);
             menuActivated = true;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+            controller.mouseSensitivity = 0;
         }
     }
 
@@ -47,7 +58,7 @@ public class InventoryManager : MonoBehaviour
     {
         for (int i = 0; i < itemSlot.Length; i++)
         {
-            if (itemSlot[i].isFull == false && itemSlot[i].name == name || itemSlot[i].quantity == 0)
+            if (itemSlot[i].isFull == false && itemSlot[i].name == itemName || itemSlot[i].quantity == 0)
             {
                 int leftOverItems = itemSlot[i].AddItem(itemName, quantity, itemImage, itemDescription);
                 if (leftOverItems > 0)
