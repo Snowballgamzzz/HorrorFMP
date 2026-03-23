@@ -13,6 +13,5 @@ public class AmmoBox : MonoBehaviour, IInteractable
     public void Interact()
     {
         item.PickUpItem();
-        Destroy(this.gameObject);
     }
 }
