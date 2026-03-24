@@ -862,8 +862,19 @@ MonoBehaviour:
   timeToShowUI: 1
   showDoorLockedUI: {fileID: 922453733}
   inventory: {fileID: 867450308}
+  inventoryManager: {fileID: 1452253326}
+  itemSlot:
+  - {fileID: 323483058}
+  - {fileID: 63451072}
+  - {fileID: 245021381}
+  - {fileID: 2143843743}
+  - {fileID: 630514876}
+  - {fileID: 1057971635}
+  - {fileID: 1628817181}
+  - {fileID: 1369655020}
   waitTimer: 1
   pauseInteraction: 0
+  KeyName: Door Key
 --- !u!224 &63451071 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6589728165867826254, guid: b018130f6ae739842a804bfd79a9b78a, type: 3}
@@ -3834,11 +3845,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
-    m_FontSize: 14
+    m_FontSize: 42
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 0
+    m_MaxSize: 42
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 0
@@ -4836,11 +4847,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
-    m_FontSize: 14
+    m_FontSize: 42
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 0
+    m_MaxSize: 42
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 0
@@ -4875,6 +4886,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0.5}
   m_SizeDelta: {x: -20, y: -13}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &738921187 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5376947530741982907, guid: b018130f6ae739842a804bfd79a9b78a, type: 3}
+  m_PrefabInstance: {fileID: 1360735347}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1 &772905000
 GameObject:
   m_ObjectHideFlags: 0
@@ -5733,6 +5755,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PCController
   player: {fileID: 1451269686}
   crosshair: {fileID: 1872506144}
+  playerHealth: {fileID: 520327826}
+  playerAmmo: {fileID: 1535245698}
   logInScreen: {fileID: 1740646183}
   homeScreen: {fileID: 1457948144}
   lockDownScreen: {fileID: 782844356}
@@ -6040,16 +6064,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 867450307}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1534513591}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 960, y: 540}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &885089359
@@ -7305,11 +7329,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
-    m_FontSize: 14
+    m_FontSize: 42
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 0
+    m_MaxSize: 52
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 0
@@ -9287,6 +9311,10 @@ PrefabInstance:
       value: ItemSlot (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1644221702010560072, guid: b018130f6ae739842a804bfd79a9b78a, type: 3}
+      propertyPath: emptyImageSlot
+      value: 
+      objectReference: {fileID: 738921187}
+    - target: {fileID: 1644221702010560072, guid: b018130f6ae739842a804bfd79a9b78a, type: 3}
       propertyPath: itemDescriptionText
       value: 
       objectReference: {fileID: 68323278}
@@ -9298,6 +9326,10 @@ PrefabInstance:
       propertyPath: itemDescriptionNameText
       value: 
       objectReference: {fileID: 274730404}
+    - target: {fileID: 5376947530741982907, guid: b018130f6ae739842a804bfd79a9b78a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 6589728165867826254, guid: b018130f6ae739842a804bfd79a9b78a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -10592,6 +10624,8 @@ MonoBehaviour:
   itemSOs:
   - {fileID: 11400000, guid: 6664aafe98c6caa4da8483583ef447e5, type: 2}
   - {fileID: 11400000, guid: 4186ae8588331b2429689f346cac665d, type: 2}
+  - {fileID: 11400000, guid: 161dd24aa397c514fb7954f6445fa9ae, type: 2}
+  player: {fileID: 1451269686}
 --- !u!4 &1452253327
 Transform:
   m_ObjectHideFlags: 0
@@ -11036,6 +11070,17 @@ RectTransform:
   m_AnchoredPosition: {x: 715.81, y: 513.75}
   m_SizeDelta: {x: 488.37, y: 52.5051}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1528205920 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5376947530741982907, guid: b018130f6ae739842a804bfd79a9b78a, type: 3}
+  m_PrefabInstance: {fileID: 2124233047}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1 &1534513587
 GameObject:
   m_ObjectHideFlags: 0
@@ -11132,7 +11177,6 @@ RectTransform:
   m_Children:
   - {fileID: 1826850936}
   - {fileID: 1872506145}
-  - {fileID: 867450309}
   - {fileID: 922453734}
   - {fileID: 534668460}
   - {fileID: 1524817458}
@@ -11213,8 +11257,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 52
-  m_fontSizeBase: 52
+  m_fontSize: 42
+  m_fontSizeBase: 42
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -15201,6 +15245,10 @@ PrefabInstance:
       value: ItemSlot (2)
       objectReference: {fileID: 0}
     - target: {fileID: 1644221702010560072, guid: b018130f6ae739842a804bfd79a9b78a, type: 3}
+      propertyPath: emptyImageSlot
+      value: 
+      objectReference: {fileID: 1528205920}
+    - target: {fileID: 1644221702010560072, guid: b018130f6ae739842a804bfd79a9b78a, type: 3}
       propertyPath: itemDescriptionText
       value: 
       objectReference: {fileID: 68323278}
@@ -15324,10 +15372,6 @@ PrefabInstance:
     - target: {fileID: 1351401474217259190, guid: b018130f6ae739842a804bfd79a9b78a, type: 3}
       propertyPath: m_Name
       value: ItemSlot
-      objectReference: {fileID: 0}
-    - target: {fileID: 1644221702010560072, guid: b018130f6ae739842a804bfd79a9b78a, type: 3}
-      propertyPath: maxNumberOfItems
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1644221702010560072, guid: b018130f6ae739842a804bfd79a9b78a, type: 3}
       propertyPath: itemDescriptionText
@@ -15563,3 +15607,4 @@ SceneRoots:
   - {fileID: 1452253327}
   - {fileID: 1735506695}
   - {fileID: 1182262165}
+  - {fileID: 867450309}
