@@ -42,7 +42,8 @@ public class MenuManager : MonoBehaviour
     public TMP_Dropdown resolutionDropdown;
 
     [Header("Resolution")]
-    Resolution[] resolutions;
+    private Resolution[] resolutions;
+    int SelectedResolution;
 
     void Start()
     {
@@ -54,26 +55,14 @@ public class MenuManager : MonoBehaviour
 
         resolutions = Screen.resolutions;
 
-        resolutionDropdown.ClearOptions();
+        List<string> resolutionStringList = new List<string>();
 
-        List<string> options = new List<string>();
-
-        int currentResolutionIndex = 0;
-
-        for (int i = 0; i < resolutions.Length; i++)
+        foreach (Resolution res in resolutions)
         {
-            string option = resolutions[i].width + " x " + resolutions[i].height;
-            options.Add(option);
-
-            if (resolutions[i].width == Screen.width && resolutions[i].height == Screen.height)
-            {
-                currentResolutionIndex = i;
-            }
+            resolutionStringList.Add(res.ToString());
         }
 
-        resolutionDropdown.AddOptions(options);
-        resolutionDropdown.value = currentResolutionIndex;
-        resolutionDropdown.RefreshShownValue();
+        resolutionDropdown.AddOptions(resolutionStringList);
     }
 
     public void TogglePauseMenu(InputAction.CallbackContext context)
@@ -130,12 +119,6 @@ public class MenuManager : MonoBehaviour
         backImage.sprite = backSprite;
         quitImage.sprite = quitSprite;
         optionsImage.sprite = optionsSprite;
-    }
-
-    public void SetResolution (int resolutionIndex)
-    {
-        Resolution resolution = resolutions[resolutionIndex];
-        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
 
     public void SetVolume(float volume)
