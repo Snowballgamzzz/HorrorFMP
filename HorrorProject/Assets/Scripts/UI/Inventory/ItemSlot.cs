@@ -17,7 +17,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     [SerializeField] private int maxNumberOfItems;
 
     [Header("Item Slot")]
-    [SerializeField] private TMP_Text quantityText;
+    public TMP_Text quantityText;
     [SerializeField] private Image visualImage;
 
     public GameObject selectedShader;
@@ -116,7 +116,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    private void EmptySlot()
+    public void EmptySlot()
     {
         quantityText.enabled = false;
         itemImage.sprite = emptyImageSlot.sprite;

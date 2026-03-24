@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class KeyDoorController : MonoBehaviour, IInteractable
@@ -10,9 +11,13 @@ public class KeyDoorController : MonoBehaviour, IInteractable
     [SerializeField] private GameObject showDoorLockedUI = null;
 
     [SerializeField] private Inventory inventory = null;
+    [SerializeField] private InventoryManager inventoryManager = null;
+    public ItemSlot[] itemSlot;
 
     [SerializeField] private int waitTimer = 1;
     [SerializeField] private bool pauseInteraction = false;
+
+    [SerializeField] private string KeyName;
 
     private void Awake()
     {
@@ -27,6 +32,7 @@ public class KeyDoorController : MonoBehaviour, IInteractable
             {
                 doorAnim.Play("DoorOpen", 0, 0.0f);
                 isDoorOpen = true;
+                InventoryUpdate();
                 StartCoroutine(PauseDoorInteraction());
             }
             else if (isDoorOpen && !pauseInteraction)
@@ -55,4 +61,26 @@ public class KeyDoorController : MonoBehaviour, IInteractable
         yield return new WaitForSeconds(timeToShowUI);
         showDoorLockedUI.SetActive(false);
     }
+
+    private void InventoryUpdate()
+    {
+        for (int i = 0; i < itemSlot.Length; i++)
+        {
+            ItemSlot itemSlotObject = itemSlot[i].GetComponent<ItemSlot>();
+
+            if (itemSlotObject.itemName == KeyName)
+            {
+                Debug.Log("Key Found");
+                itemSlotObject.quantity -= 1;
+                itemSlotObject.quantityText.text = itemSlotObject.quantity.ToString();
+
+                if (itemSlotObject.quantity <= 0)
+                {
+                    itemSlotObject.EmptySlot();
+                }
+
+            }
+        }
+    }
+
 }

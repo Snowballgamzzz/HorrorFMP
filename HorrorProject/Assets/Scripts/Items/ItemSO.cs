@@ -9,6 +9,7 @@ public class ItemSO : ScriptableObject
 
     private HealthManager healthManager;
     private AmmoManager ammoManager;
+    private Inventory inventory;
 
     public bool UseItem()
     {
@@ -47,14 +48,28 @@ public class ItemSO : ScriptableObject
                 return false;
             }
         }
+        else if (statToChange == StatToChange.doorKey)
+        {
+            inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
 
-        return false;
+            if (inventory.hasKey)
+            {
+                return true;
+            }
+            else if (!inventory.hasKey)
+            {
+                return false;
+            }
+        }
+
+            return false;
     }
 
     public enum StatToChange
     { 
         none,
         health,
+        doorKey,
         ammo
     };
 

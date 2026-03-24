@@ -19,7 +19,6 @@ public class KeyItemController : MonoBehaviour, IInteractable
         {
             inventory.hasKey = true;
             item.PickUpItem();
-            //gameObject.SetActive(false);
         }
     }
 }
