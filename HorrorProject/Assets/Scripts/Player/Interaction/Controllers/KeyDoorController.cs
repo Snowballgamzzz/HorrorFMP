@@ -26,7 +26,7 @@ public class KeyDoorController : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        if (inventory.hasKey)
+        if (inventory.hasOfficeKey)
         {
             if (!isDoorOpen && !pauseInteraction)
             {

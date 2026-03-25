@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7476239539299110118
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6826920437537955580}
+  - component: {fileID: 5039379434941893826}
+  m_Layer: 0
+  m_Name: MenuManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6826920437537955580
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7476239539299110118}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 459.76746, y: 347.18335, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5039379434941893826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7476239539299110118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42d590f9ccac37e41bba1f8ed8685490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MenuManager
+  LevelName: MainMenu
+  resumeSprite: {fileID: 876715562, guid: 5478c8e59f8005c4a97164943ddd1d28, type: 3}
+  backSprite: {fileID: 1915548273, guid: b69a8482a24e5a84c80ec18efff99a69, type: 3}
+  quitSprite: {fileID: -1751010543, guid: 76a0aae0050e1fc449e87e6e59500506, type: 3}
+  optionsSprite: {fileID: -899856201, guid: 0f76484f26a3a494ca5504ec0d04174f, type: 3}
+  resumeOrPlayButton: {fileID: 0}
+  backButton: {fileID: 0}
+  quitButton: {fileID: 0}
+  optionsButton: {fileID: 0}
+  healthBar: {fileID: 0}
+  ammo: {fileID: 0}
+  player: {fileID: 0}
+  pauseMenuCanvas: {fileID: 0}
+  audioMixer: {fileID: 0}
+  resolutionDropdown: {fileID: 0}

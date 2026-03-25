@@ -48,29 +48,71 @@ public class ItemSO : ScriptableObject
                 return false;
             }
         }
-        else if (statToChange == StatToChange.doorKey)
+        else if (statToChange == StatToChange.officeKey)
         {
             inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
 
-            if (inventory.hasKey)
+            if (inventory.hasOfficeKey)
             {
                 return true;
             }
-            else if (!inventory.hasKey)
+            else if (!inventory.hasOfficeKey)
+            {
+                return false;
+            }
+        }
+        else if (statToChange == StatToChange.labKey)
+        {
+            inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
+
+            if (inventory.hasLabKey)
+            {
+                return true;
+            }
+            else if (!inventory.hasLabKey)
+            {
+                return false;
+            }
+        }
+        else if (statToChange == StatToChange.testChamberKey)
+        {
+            inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
+
+            if (inventory.hasTestChamberKey)
+            {
+                return true;
+            }
+            else if (!inventory.hasTestChamberKey)
+            {
+                return false;
+            }
+        }
+        else if (statToChange == StatToChange.surgicalRoomKey)
+        {
+            inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
+
+            if (inventory.hasSurgicalRoomAKey)
+            {
+                return true;
+            }
+            else if (!inventory.hasSurgicalRoomAKey)
             {
                 return false;
             }
         }
 
-            return false;
+        return false;
     }
 
     public enum StatToChange
     { 
         none,
         health,
-        doorKey,
-        ammo
+        officeKey,
+        ammo,
+        labKey,
+        testChamberKey,
+        surgicalRoomKey
     };
 
 }

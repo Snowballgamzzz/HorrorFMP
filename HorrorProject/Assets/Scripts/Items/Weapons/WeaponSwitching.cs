@@ -5,6 +5,10 @@ public class WeaponSwitching : MonoBehaviour
 {
     public int selectedWeapon = 0;
 
+    public GameObject pistolAmmoCount;
+    public GameObject shotgunAmmoCount;
+    public GameObject meleeAmmoCount;
+
     private void Start()
     {
         SelectedWeapon();
@@ -36,6 +40,34 @@ public class WeaponSwitching : MonoBehaviour
             {
                 selectedWeapon--;
             }
+        }
+
+        if (previousSelectedWeapon != selectedWeapon)
+        {
+            SelectedWeapon();
+            AmmoSwitch();
+        }
+    }
+
+    void AmmoSwitch()
+    {
+        if (selectedWeapon == 0)
+        {
+            meleeAmmoCount.SetActive(true);
+            pistolAmmoCount.SetActive(false);
+            shotgunAmmoCount.SetActive(false);
+        }
+        else if (selectedWeapon == 1)
+        {
+            meleeAmmoCount.SetActive(false);
+            pistolAmmoCount.SetActive(true);
+            shotgunAmmoCount.SetActive(false);
+        }
+        if (selectedWeapon == 2)
+        {
+            meleeAmmoCount.SetActive(false);
+            pistolAmmoCount.SetActive(false);
+            shotgunAmmoCount.SetActive(true);
         }
     }
 
