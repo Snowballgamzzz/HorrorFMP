@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -26,6 +27,7 @@ public class FPController : MonoBehaviour
     public event Action<bool> OnGroundStateChange;
 
     internal float movementSpeedMultiplier;
+    public float tutorialSeconds;
 
     CharacterController controller;
     internal Vector3 velocity;
@@ -38,6 +40,8 @@ public class FPController : MonoBehaviour
     InputAction moveAction;
     InputAction lookAction;
 
+    public GameObject playerWalkingTutorialUI;
+
     void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -49,6 +53,7 @@ public class FPController : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        playerWalkingTutorialUI.SetActive(true);
     }
 
     private void Update()
@@ -120,4 +125,5 @@ public class FPController : MonoBehaviour
         //character controller movement
         controller.Move(velocity * Time.deltaTime);
     }
+
 }

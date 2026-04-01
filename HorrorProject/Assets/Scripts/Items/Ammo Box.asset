@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Ammo Box
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
   itemName: Ammo Box
-  statToChange: 2
+  statToChange: 3

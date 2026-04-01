@@ -8,6 +8,16 @@ public class KeyItemController : MonoBehaviour, IInteractable
 
     Item item;
 
+    public enum KeyTypes
+    {
+        Office,
+        TestChamber,
+        SurgicalRoom,
+        Lab
+    };
+
+    public KeyTypes keytypes;
+
     public void Start()
     {
         item = GetComponent<Item>();
@@ -17,8 +27,26 @@ public class KeyItemController : MonoBehaviour, IInteractable
     {
         if (key)
         {
-            inventory.hasKey = true;
-            item.PickUpItem();
+            if (keytypes == KeyTypes.Office)
+            {
+                inventory.hasOfficeKey = true;
+                item.PickUpItem();
+            }
+            else if (keytypes == KeyTypes.TestChamber)
+            {
+                inventory.hasTestChamberKey = true;
+                item.PickUpItem();
+            }
+            else if (keytypes == KeyTypes.Lab)
+            {
+                inventory.hasLabKey = true;
+                item.PickUpItem();
+            }
+            else if(keytypes == KeyTypes.SurgicalRoom)
+            {
+                inventory.hasSurgicalRoomAKey = true;
+                item.PickUpItem();
+            }
         }
     }
 }

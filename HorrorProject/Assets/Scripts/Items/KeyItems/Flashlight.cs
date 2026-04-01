@@ -1,21 +1,34 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class Flashlight : MonoBehaviour
 {
-    public GameObject flashlight;
+    public GameObject playerflashlight;
+    public GameObject tutorialUI;
     public bool isFlashlightOn;
+    public bool playerHasFlashlight;
+
+    FlashlightTutorial tutorial;
+
+    private void Start()
+    {
+        playerHasFlashlight = true;
+        isFlashlightOn = true;
+        tutorial = tutorialUI.GetComponent<FlashlightTutorial>();
+        StartCoroutine(tutorial.showFlashLightTutorial());
+    }
 
     public void FlashlightToggle(InputAction.CallbackContext context)
     {
-        if (isFlashlightOn)
+        if (isFlashlightOn && playerHasFlashlight)
         {
-            flashlight.SetActive(false);
+            playerflashlight.SetActive(false);
             isFlashlightOn = false;
         }
-        else
+        else if (!isFlashlightOn && playerHasFlashlight)
         {
-            flashlight.SetActive(true);
+            playerflashlight.SetActive(true);
             isFlashlightOn = true;
         }
     }

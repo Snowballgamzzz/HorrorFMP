@@ -15,6 +15,7 @@ public class DocumentInteraction : MonoBehaviour, IInteractable
     public GameObject player;
 
     private bool isInspectorActive;
+    private bool isViewingThisDocument;
 
     void Start()
     {
@@ -32,6 +33,7 @@ public class DocumentInteraction : MonoBehaviour, IInteractable
         document.SetActive(true);
         FPController.isInspectingDocument = true;
         FPController.mouseSensitivity = 0f;
+        isViewingThisDocument = true;
     }
 
     public void DocumentTextView(InputAction.CallbackContext context)
@@ -53,7 +55,7 @@ public class DocumentInteraction : MonoBehaviour, IInteractable
 
     public void DocumentExit(InputAction.CallbackContext context)
     {
-        if (context.performed && FPController.isInspectingDocument)
+        if (context.performed && FPController.isInspectingDocument && isViewingThisDocument)
         {
             documentInspector.SetActive(false);
             document.SetActive(false);
@@ -63,6 +65,7 @@ public class DocumentInteraction : MonoBehaviour, IInteractable
             playerAmmo.SetActive(true);
             FPController.isInspectingDocument = false;
             FPController.mouseSensitivity = 3f;
+            isViewingThisDocument = false;
         }
     }
 }

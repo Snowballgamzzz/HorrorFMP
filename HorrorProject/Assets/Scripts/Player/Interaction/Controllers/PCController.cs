@@ -7,6 +7,8 @@ public class PCController : MonoBehaviour, IInteractable
     [Header("Reference")]
     public GameObject player;
     FPController cam;
+    BossRoomDoorController bossRoom;
+    public GameObject bossDoor;
 
     [Header("PlayerUI")]
     public GameObject crosshair;
@@ -18,6 +20,7 @@ public class PCController : MonoBehaviour, IInteractable
     public GameObject homeScreen;
     public GameObject lockDownScreen;
     public GameObject wrongUsernameOrPassword;
+    public GameObject lockDownLifed;
     public Text usernameText;
     public Text passwordText;
     public Text lockDownText;
@@ -34,6 +37,7 @@ public class PCController : MonoBehaviour, IInteractable
     private void Start()
     {
         cam = player.gameObject.GetComponent<FPController>();
+        bossRoom = bossDoor.GetComponent<BossRoomDoorController>();
     }
 
     public void Interact()
@@ -66,7 +70,8 @@ public class PCController : MonoBehaviour, IInteractable
     {
         if (lockDownText.text == lockDownCode)
         {
-            Debug.Log("Log Down Lifted");
+            lockDownLifed.SetActive(true);
+            bossRoom.OpenDoor();
         }
     }
 
