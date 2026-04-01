@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class PlayerHealth : MonoBehaviour
 
     public float healAmount;
 
+    public string levelLoad;
+
     private void Start()
     {
         healthBar.value = health; 
@@ -20,7 +23,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (health <= 0)
         {
-            Debug.Log("Player is Dead");
+            SceneManager.LoadScene(levelLoad);
         }
     }
 
