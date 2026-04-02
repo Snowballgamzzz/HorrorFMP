@@ -38,7 +38,7 @@ public class ItemSO : ScriptableObject
 
             if (ammoManager.playerGun.currentClip < ammoManager.playerGun.maxClip)
             {
-                int additionalAmmo = Random.Range(1, 10);
+                int additionalAmmo = Random.Range(8, 10);
                 ammoManager.playerGun.currentClip += additionalAmmo;
                 return true;
             }
