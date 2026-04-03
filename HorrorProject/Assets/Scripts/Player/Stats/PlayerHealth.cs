@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -14,16 +13,27 @@ public class PlayerHealth : MonoBehaviour
 
     public string levelLoad;
 
+    public Transform respawnPoint;
+    public Transform player;
+
+    public GameObject deathUI;
+    CharacterController characterController;
+
     private void Start()
     {
-        healthBar.value = health; 
+        healthBar.value = health;
+        player = this.gameObject.transform;
+        characterController = GetComponent<CharacterController>();
     }
 
     private void Update()
     {
         if (health <= 0)
         {
-            SceneManager.LoadScene(levelLoad);
+            deathUI.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            characterController.enabled = false;
         }
     }
 
@@ -32,5 +42,15 @@ public class PlayerHealth : MonoBehaviour
         healAmount = Random.Range(10, 20);
         health += healAmount;
         healthBar.value = health;
+    }
+
+    public void Respawn()
+    {
+        player.transform.position = respawnPoint.position;
+        health = maxHealth;
+        deathUI.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        characterController.enabled = true;
     }
 }
