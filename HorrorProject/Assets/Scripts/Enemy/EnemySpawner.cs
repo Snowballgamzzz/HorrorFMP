@@ -9,6 +9,8 @@ public class EnemySpawner : MonoBehaviour
 
     public float spawnAmmount;
 
+    public bool playerIsInRoom;
+
     private void Start()
     {
         spawnCounter = timeToSpawn;
@@ -16,17 +18,28 @@ public class EnemySpawner : MonoBehaviour
 
     void Update()
     {
-        if (spawnAmmount > 0)
+        if (playerIsInRoom)
         {
-            spawnCounter -= Time.deltaTime;
-
-            if (spawnCounter <= 0)
+            if (spawnAmmount > 0)
             {
-                spawnCounter = timeToSpawn;
-                spawnAmmount--;
+                spawnCounter -= Time.deltaTime;
 
-                Instantiate(enemyToSpawn, transform.position, transform.rotation);
+                if (spawnCounter <= 0)
+                {
+                    spawnCounter = timeToSpawn;
+                    spawnAmmount--;
+
+                    Instantiate(enemyToSpawn, transform.position, transform.rotation);
+                }
             }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            playerIsInRoom = true;
         }
     }
 }
