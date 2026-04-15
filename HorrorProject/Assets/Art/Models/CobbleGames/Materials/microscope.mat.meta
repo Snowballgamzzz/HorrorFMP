@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 491bb2aa682ebd8469707681a35a8284
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 190309
+  packageName: Laboratory Equipment
+  packageVersion: 1.0
+  assetPath: Assets/CobbleGames/Materials/microscope.mat
+  uploadId: 421204

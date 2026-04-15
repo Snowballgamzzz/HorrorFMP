@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 350774db522e02044b57ffddb99dfd6b
+timeCreated: 1483782216
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 83907
+  packageName: Laboratory Interiors
+  packageVersion: 1.0
+  assetPath: Assets/Dnk_Dev/LaboratoryInteriors/Models/Materials/Mat_Column01.mat
+  uploadId: 168419

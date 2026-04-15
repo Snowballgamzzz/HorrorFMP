@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f9eaba829b96dac4ba17b39db69cca7a
+timeCreated: 1483783719
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 83907
+  packageName: Laboratory Interiors
+  packageVersion: 1.0
+  assetPath: Assets/Dnk_Dev/LaboratoryInteriors/Models/Materials/Mat_Garbage_can_01.mat
+  uploadId: 168419

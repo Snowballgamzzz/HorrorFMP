@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 080c3fec44dda274ca4be8ad90b17957
+timeCreated: 1483782791
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 83907
+  packageName: Laboratory Interiors
+  packageVersion: 1.0
+  assetPath: Assets/Dnk_Dev/LaboratoryInteriors/Models/Materials/Mat_Computer_chair01.mat
+  uploadId: 168419

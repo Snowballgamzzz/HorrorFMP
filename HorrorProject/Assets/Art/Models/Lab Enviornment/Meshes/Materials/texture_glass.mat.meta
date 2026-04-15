@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2fb1032861e27fc47b0976ba9780512a
+timeCreated: 1496344926
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 89958
+  packageName: Lab Environment Set
+  packageVersion: 1.0
+  assetPath: Assets/Models/Meshes/Materials/texture_glass.mat
+  uploadId: 183164

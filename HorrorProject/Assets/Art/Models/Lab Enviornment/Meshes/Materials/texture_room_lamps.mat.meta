@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c45e016b60dd99042a6a410baa12d3d2
+timeCreated: 1496345759
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 89958
+  packageName: Lab Environment Set
+  packageVersion: 1.0
+  assetPath: Assets/Models/Meshes/Materials/texture_room_lamps.mat
+  uploadId: 183164

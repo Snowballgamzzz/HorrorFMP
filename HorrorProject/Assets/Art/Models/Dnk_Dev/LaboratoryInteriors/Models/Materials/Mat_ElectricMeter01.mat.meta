@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6efbffc34e5fe0a4c999ea51f4967db6
+timeCreated: 1483783359
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 83907
+  packageName: Laboratory Interiors
+  packageVersion: 1.0
+  assetPath: Assets/Dnk_Dev/LaboratoryInteriors/Models/Materials/Mat_ElectricMeter01.mat
+  uploadId: 168419

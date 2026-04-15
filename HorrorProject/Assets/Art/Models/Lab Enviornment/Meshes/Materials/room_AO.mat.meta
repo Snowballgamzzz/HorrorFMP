@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c83443316f603fe41954e325c6a59c4e
+timeCreated: 1496343242
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 89958
+  packageName: Lab Environment Set
+  packageVersion: 1.0
+  assetPath: Assets/Models/Meshes/Materials/room_AO.mat
+  uploadId: 183164

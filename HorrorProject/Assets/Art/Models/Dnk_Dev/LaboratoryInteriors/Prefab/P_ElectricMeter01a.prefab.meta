@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 42c11b03d285ff046a715dc46109e226
+timeCreated: 1487845067
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 83907
+  packageName: Laboratory Interiors
+  packageVersion: 1.0
+  assetPath: Assets/Dnk_Dev/LaboratoryInteriors/Prefab/P_ElectricMeter01a.prefab
+  uploadId: 168419

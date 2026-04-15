@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b2db379a5aa67b442a1465b336962f69
+timeCreated: 1487844379
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 83907
+  packageName: Laboratory Interiors
+  packageVersion: 1.0
+  assetPath: Assets/Dnk_Dev/LaboratoryInteriors/Prefab/P_Column01.prefab
+  uploadId: 168419

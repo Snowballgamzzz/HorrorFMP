@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: dbb5d7dbf28e3b640843916897cbac44
+timeCreated: 1487844649
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 83907
+  packageName: Laboratory Interiors
+  packageVersion: 1.0
+  assetPath: Assets/Dnk_Dev/LaboratoryInteriors/Prefab/P_Computer_chair01.prefab
+  uploadId: 168419

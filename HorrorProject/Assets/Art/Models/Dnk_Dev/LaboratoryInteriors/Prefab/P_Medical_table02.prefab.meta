@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5d67df063260d7d41bb334c9f83c99c2
+timeCreated: 1487845633
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 83907
+  packageName: Laboratory Interiors
+  packageVersion: 1.0
+  assetPath: Assets/Dnk_Dev/LaboratoryInteriors/Prefab/P_Medical_table02.prefab
+  uploadId: 168419

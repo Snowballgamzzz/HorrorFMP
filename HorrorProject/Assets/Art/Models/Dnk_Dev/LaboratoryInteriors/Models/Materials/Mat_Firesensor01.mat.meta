@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: eba7ecd72d7f76048aadc3037e000da0
+timeCreated: 1483783657
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 83907
+  packageName: Laboratory Interiors
+  packageVersion: 1.0
+  assetPath: Assets/Dnk_Dev/LaboratoryInteriors/Models/Materials/Mat_Firesensor01.mat
+  uploadId: 168419
