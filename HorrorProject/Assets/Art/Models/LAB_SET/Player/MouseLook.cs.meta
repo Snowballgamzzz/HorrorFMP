@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 1cd41eeb3fcf80f46b3aff72a631ca8c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 178318
+  packageName: Laboratory Complex SET
+  packageVersion: 1.3
+  assetPath: Assets/LAB_SET/Player/MouseLook.cs
+  uploadId: 426296
