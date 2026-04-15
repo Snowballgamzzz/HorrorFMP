@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 74a45e9d2720d3b41814146f74cbb5da
+timeCreated: 1487845684
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 83907
+  packageName: Laboratory Interiors
+  packageVersion: 1.0
+  assetPath: Assets/Dnk_Dev/LaboratoryInteriors/Prefab/P_Monitor01.prefab
+  uploadId: 168419

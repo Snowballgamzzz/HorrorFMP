@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0a23d4581da78bf44839c97dd6f07bec
+timeCreated: 1487846130
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 83907
+  packageName: Laboratory Interiors
+  packageVersion: 1.0
+  assetPath: Assets/Dnk_Dev/LaboratoryInteriors/Prefab/P_Window_big01.prefab
+  uploadId: 168419

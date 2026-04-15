@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 463baeac70e7ab249b35df23d312716f
+timeCreated: 1483782500
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 83907
+  packageName: Laboratory Interiors
+  packageVersion: 1.0
+  assetPath: Assets/Dnk_Dev/LaboratoryInteriors/Models/Materials/Mat_Column01_Off.mat
+  uploadId: 168419

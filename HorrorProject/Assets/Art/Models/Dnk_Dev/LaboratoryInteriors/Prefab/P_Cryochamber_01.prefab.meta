@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e6c8507ca6d67f44c9230a94d19fcd06
+timeCreated: 1487844754
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 83907
+  packageName: Laboratory Interiors
+  packageVersion: 1.0
+  assetPath: Assets/Dnk_Dev/LaboratoryInteriors/Prefab/P_Cryochamber_01.prefab
+  uploadId: 168419

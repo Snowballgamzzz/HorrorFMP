@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 701959fd2d6a96d43ad683694753cbe9
+timeCreated: 1483784106
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 83907
+  packageName: Laboratory Interiors
+  packageVersion: 1.0
+  assetPath: Assets/Dnk_Dev/LaboratoryInteriors/Models/Materials/Mat_MatMouse01.mat
+  uploadId: 168419

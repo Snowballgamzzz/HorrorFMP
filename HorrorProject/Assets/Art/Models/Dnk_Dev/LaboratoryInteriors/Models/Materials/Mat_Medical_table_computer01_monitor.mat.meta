@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c61169004e7acfd4a8d6cb46b7e2cd0f
+timeCreated: 1483785589
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 83907
+  packageName: Laboratory Interiors
+  packageVersion: 1.0
+  assetPath: Assets/Dnk_Dev/LaboratoryInteriors/Models/Materials/Mat_Medical_table_computer01_monitor.mat
+  uploadId: 168419

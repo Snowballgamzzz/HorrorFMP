@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 588ed688d947bf243968f4b93cb534fa
+timeCreated: 1487846098
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 83907
+  packageName: Laboratory Interiors
+  packageVersion: 1.0
+  assetPath: Assets/Dnk_Dev/LaboratoryInteriors/Models/Materials/Mat_Window_big01.mat
+  uploadId: 168419

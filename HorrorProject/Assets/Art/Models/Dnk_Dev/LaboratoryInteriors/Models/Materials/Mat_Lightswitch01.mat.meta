@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 602558ad2609c7a4a87bafa9fb041a36
+timeCreated: 1483784000
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 83907
+  packageName: Laboratory Interiors
+  packageVersion: 1.0
+  assetPath: Assets/Dnk_Dev/LaboratoryInteriors/Models/Materials/Mat_Lightswitch01.mat
+  uploadId: 168419

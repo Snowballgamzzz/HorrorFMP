@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6d29d0dff9514484a933f207c5082d83
+timeCreated: 1489758384
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 89958
+  packageName: Lab Environment Set
+  packageVersion: 1.0
+  assetPath: Assets/Models/Meshes/Materials/texture.mat
+  uploadId: 183164
