@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1135578193139866}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -11.176944, y: -0.0000006726997, z: -11.833678}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 33901686069145798}
   - component: {fileID: 23599432025365202}
   - component: {fileID: 64290338224049442}
+  - component: {fileID: 2459124334744080517}
   m_Layer: 0
   m_Name: Monitor01
   m_TagString: Untagged
@@ -99,7 +100,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c61169004e7acfd4a8d6cb46b7e2cd0f, type: 2}
+  - {fileID: 2100000, guid: 7e1b01062acb5a14d919fbc8a99aa586, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -145,3 +146,24 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300002, guid: d0272b561d7b0ea4392693fc80a0730f, type: 3}
+--- !u!65 &2459124334744080517
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216580783010820}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.8746, y: 0.6091, z: 0.2002}
+  m_Center: {x: 0, y: 0.31185, z: 0}
