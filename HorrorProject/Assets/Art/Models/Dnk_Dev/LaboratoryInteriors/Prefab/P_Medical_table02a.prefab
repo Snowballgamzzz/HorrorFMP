@@ -24,9 +24,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1498171996710290}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.3826739, z: -0, w: 0.92388356}
+  m_LocalRotation: {x: 0, y: 0.38267535, z: 0, w: 0.9238829}
   m_LocalPosition: {x: -11.16, y: 0.30999938, z: -15.211}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4091763037555530}
@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 33806862207154862}
   - component: {fileID: 23911223711468820}
   - component: {fileID: 64445503852939010}
+  - component: {fileID: 8278636861713545028}
   m_Layer: 0
   m_Name: medical_table02a
   m_TagString: Untagged
@@ -99,7 +100,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f070d3f3d9b29d44483a06719d52a4cb, type: 2}
+  - {fileID: 2100000, guid: 284da5a7a985c7848bb20c6cc449d904, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -145,3 +146,24 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: b9a8879ba18e4364cb7279d8b0b8fb7a, type: 3}
+--- !u!65 &8278636861713545028
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655386157638930}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.7318, y: 0.7049, z: 0.5222}
+  m_Center: {x: 0.0000038146973, y: 0.35175002, z: -0.0000038146973}

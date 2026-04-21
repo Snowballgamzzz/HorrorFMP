@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33967004628159298}
   - component: {fileID: 23885954841449220}
   - component: {fileID: 64370375330557448}
+  - component: {fileID: 4378023823543305127}
   m_Layer: 0
   m_Name: OfficeBox01
   m_TagString: Untagged
@@ -67,7 +68,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9b5c54ea6736f2c49a2bb65f3bf2d0d4, type: 2}
+  - {fileID: 2100000, guid: 724e601059e4dfd4a8e3a15f9fe6fdec, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -113,6 +114,27 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300002, guid: c1a81bd979986304d83d94255a21e563, type: 3}
+--- !u!65 &4378023823543305127
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750893287807616}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.531, y: 1.4146, z: 0.7}
+  m_Center: {x: 0.0000038146973, y: 0.7073, z: -0.0000038146973}
 --- !u!1 &1943747657807328
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,9 +159,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1943747657807328}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.658016, y: -0.00000068963203, z: -12.061881}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4481327469100588}
