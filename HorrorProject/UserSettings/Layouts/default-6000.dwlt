@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Project
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 388}
   m_MaxSize: {x: 10000, y: 10000}
@@ -256,7 +256,7 @@ MonoBehaviour:
   - {fileID: 20}
   - {fileID: 21}
   m_Selected: 0
-  m_LastSelected: 3
+  m_LastSelected: 1
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -692,43 +692,25 @@ MonoBehaviour:
     m_DynamicPanelBehavior: 0
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
+      scrollPos: {x: 0, y: 1755}
       m_SelectedIDs: []
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
-      - m_Data: -166128
-      - m_Data: -164692
-      - m_Data: -127616
-      - m_Data: -118588
-      - m_Data: -112736
-      - m_Data: -112142
-      - m_Data: -111700
-      - m_Data: -111214
-      - m_Data: -110554
-      - m_Data: -109276
-      - m_Data: -107980
-      - m_Data: -105440
-      - m_Data: -96896
-      - m_Data: -88280
-      - m_Data: -87888
-      - m_Data: -87538
-      - m_Data: -87234
-      - m_Data: -84138
-      - m_Data: -83342
-      - m_Data: -83294
-      - m_Data: -82090
-      - m_Data: -81920
-      - m_Data: -81246
-      - m_Data: -80964
-      - m_Data: -79824
-      - m_Data: -79470
-      - m_Data: -78910
-      - m_Data: -77952
-      - m_Data: -73660
-      - m_Data: 74326
-      - m_Data: 77202
-      - m_Data: 78144
+      - m_Data: -154586
+      - m_Data: -95146
+      - m_Data: -89956
+      - m_Data: -86782
+      - m_Data: -83402
+      - m_Data: -83260
+      - m_Data: -77812
+      - m_Data: -76906
+      - m_Data: -73864
+      - m_Data: 74512
+      - m_Data: 76770
+      - m_Data: 78586
+      - m_Data: 78608
+      - m_Data: 78824
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -746,7 +728,7 @@ MonoBehaviour:
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_TrimLeadingAndTrailingWhitespace: 0
-        m_ClientGUIView: {fileID: 8}
+        m_ClientGUIView: {fileID: 0}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -1181,9 +1163,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -52.17405, y: 5.7958465, z: -32.88304}
+    m_Target: {x: -67.71797, y: 2.4360971, z: -68.03992}
     speed: 2
-    m_Value: {x: -52.17405, y: 5.7958465, z: -32.88304}
+    m_Value: {x: -67.71797, y: 2.4360971, z: -68.03992}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1229,9 +1211,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.0053818724, y: 0.998016, z: -0.07369268, w: -0.034255534}
+    m_Target: {x: 0.008587137, y: 1.0013282, z: 0.016875304, w: 0.007562755}
     speed: 2
-    m_Value: {x: -0.0055954633, y: 0.9965797, z: -0.073578075, w: -0.037199814}
+    m_Value: {x: 0.008548685, y: 0.9997803, z: 0.01686227, w: 0.009050839}
   m_Size:
     m_Target: 17.37822
     speed: 2
@@ -1665,7 +1647,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Art/Models/ceiling-lamp-10mb/Materials
+    - Assets/Art/Models
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1675,7 +1657,7 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Art/Models/ceiling-lamp-10mb/Materials
+  - Assets/Art/Models
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\2winga47\Downloads\HorrorFMP\HorrorProject
   m_LockTracker:
@@ -1684,27 +1666,23 @@ MonoBehaviour:
   m_FolderTreeState:
     scrollPos: {x: 0, y: 159}
     m_SelectedIDs:
-    - m_Data: 81136
+    - m_Data: 73434
     m_LastClickedID:
-      m_Data: 81136
+      m_Data: 73434
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 73270
-    - m_Data: 73276
-    - m_Data: 73280
-    - m_Data: 74020
-    - m_Data: 80830
-    - m_Data: 80832
-    - m_Data: 80838
-    - m_Data: 80840
-    - m_Data: 80842
-    - m_Data: 80844
-    - m_Data: 80854
-    - m_Data: 80876
-    - m_Data: 80956
-    - m_Data: 80992
-    - m_Data: 80998
-    - m_Data: 81210
+    - m_Data: 73368
+    - m_Data: 73374
+    - m_Data: 73378
+    - m_Data: 73432
+    - m_Data: 73434
+    - m_Data: 73438
+    - m_Data: 73458
+    - m_Data: 73464
+    - m_Data: 81388
+    - m_Data: 81392
+    - m_Data: 81494
+    - m_Data: 81858
     - m_Data: 1000000000
     - m_Data: 2147483647
     m_RenameOverlay:
@@ -1826,9 +1804,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 745
+    y: 739
     width: 1438
-    height: 249
+    height: 247
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1904,9 +1882,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 745
+    y: 739
     width: 1438
-    height: 249
+    height: 247
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1922,7 +1900,7 @@ MonoBehaviour:
     m_DynamicPanelBehavior: 0
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 0
+  m_LastSelectedObjectID: 78608
 --- !u!114 &22
 MonoBehaviour:
   m_ObjectHideFlags: 52
