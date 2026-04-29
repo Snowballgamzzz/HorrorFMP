@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class FPController : MonoBehaviour
 {
     public float mouseSensitivity = 3f;
-    [SerializeField] float movementSpeed = 5f;
+    public float movementSpeed = 5f;
     [SerializeField] float mass = 1f;
     [SerializeField] float acceleration = 20f;
     public Transform cameraTransform;
