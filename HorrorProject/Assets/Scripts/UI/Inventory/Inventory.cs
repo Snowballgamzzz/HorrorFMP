@@ -6,4 +6,5 @@ public class Inventory : MonoBehaviour
     public bool hasSurgicalRoomAKey = false;
     public bool hasLabKey = false;
     public bool hasTestChamberKey = false;
+    public bool hasSecurityRoomKey = false;
 }

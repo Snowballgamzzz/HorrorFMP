@@ -126,7 +126,6 @@ GameObject:
   - component: {fileID: 4728061411538324728}
   - component: {fileID: 5751086569725526467}
   - component: {fileID: 1667325498312197924}
-  - component: {fileID: 4868407081758458714}
   m_Layer: 0
   m_Name: RightDoor
   m_TagString: Untagged
@@ -228,28 +227,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!95 &4868407081758458714
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3581161342861735211}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8a7f8c416edbf2e47aabb4bef2fd7833, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4756615529420386001
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,9 +237,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5648635429391497632}
   - component: {fileID: 2261891620509023402}
+  - component: {fileID: 8781246896946637281}
   m_Layer: 0
   m_Name: DoubleDoor
-  m_TagString: Untagged
+  m_TagString: InteractiveObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -306,6 +284,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &8781246896946637281
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4756615529420386001}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.11445141, y: 2.9698045, z: 3}
+  m_Center: {x: 4.9976315, y: 1.5309159, z: 0.027686417}
 --- !u!1 &7034824446493846584
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,7 +317,6 @@ GameObject:
   - component: {fileID: 4597679956648073314}
   - component: {fileID: 9160276515184213778}
   - component: {fileID: 6702511444813953903}
-  - component: {fileID: 5371092863805887020}
   m_Layer: 0
   m_Name: LeftDoor
   m_TagString: Untagged
@@ -420,28 +418,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!95 &5371092863805887020
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7034824446493846584}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 403ac0aaa298d0d458ff3ebca00d139d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8808060826406882146
 GameObject:
   m_ObjectHideFlags: 0

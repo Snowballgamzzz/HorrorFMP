@@ -1,3 +1,4 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class KeyItemController : MonoBehaviour, IInteractable
@@ -13,7 +14,8 @@ public class KeyItemController : MonoBehaviour, IInteractable
         Office,
         TestChamber,
         SurgicalRoom,
-        Lab
+        Lab,
+        SecurityOffice
     };
 
     public KeyTypes keytypes;
@@ -45,6 +47,11 @@ public class KeyItemController : MonoBehaviour, IInteractable
             else if(keytypes == KeyTypes.SurgicalRoom)
             {
                 inventory.hasSurgicalRoomAKey = true;
+                item.PickUpItem();
+            }
+            else if (keytypes == KeyTypes.SecurityOffice)
+            {
+                inventory.hasSecurityRoomKey = true;
                 item.PickUpItem();
             }
         }
