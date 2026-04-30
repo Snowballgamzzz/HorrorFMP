@@ -100,8 +100,21 @@ public class ItemSO : ScriptableObject
                 return false;
             }
         }
+        else if (statToChange == StatToChange.securityRoomKey)
+        {
+            inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
 
-        return false;
+            if (inventory.hasSecurityRoomKey)
+            {
+                return true;
+            }
+            else if (!inventory.hasSecurityRoomKey)
+            {
+                return false;
+            }
+        }
+
+            return false;
     }
 
     public enum StatToChange
@@ -112,7 +125,8 @@ public class ItemSO : ScriptableObject
         ammo,
         labKey,
         testChamberKey,
-        surgicalRoomKey
+        surgicalRoomKey,
+        securityRoomKey
     };
 
 }
