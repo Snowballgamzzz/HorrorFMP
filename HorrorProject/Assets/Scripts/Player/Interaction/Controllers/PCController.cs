@@ -9,6 +9,7 @@ public class PCController : MonoBehaviour, IInteractable
     FPController cam;
     BossRoomDoorController bossRoom;
     public GameObject bossDoor;
+    public GameObject triggerObject;
 
     [Header("PlayerUI")]
     public GameObject crosshair;
@@ -38,6 +39,7 @@ public class PCController : MonoBehaviour, IInteractable
     {
         cam = player.gameObject.GetComponent<FPController>();
         bossRoom = bossDoor.GetComponent<BossRoomDoorController>();
+        triggerObject.SetActive(false);
     }
 
     public void Interact()
@@ -72,6 +74,7 @@ public class PCController : MonoBehaviour, IInteractable
         {
             lockDownLifed.SetActive(true);
             bossRoom.OpenDoor();
+            triggerObject.SetActive(true);
         }
     }
 
