@@ -10,6 +10,7 @@ public class EnemySpawner : MonoBehaviour
     public float spawnAmmount;
 
     public bool playerIsInRoom;
+    public bool canSpawn;
 
     private void Start()
     {
@@ -18,7 +19,7 @@ public class EnemySpawner : MonoBehaviour
 
     void Update()
     {
-        if (playerIsInRoom)
+        if (playerIsInRoom && canSpawn)
         {
             if (spawnAmmount > 0)
             {
