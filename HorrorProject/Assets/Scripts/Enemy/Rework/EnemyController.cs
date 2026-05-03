@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -24,6 +22,10 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float viewAngle = 90f;
     [SerializeField] private float losePlayerTime = 3f;
     [SerializeField] private float attackRange = 1.2f;
+
+    [Header("Stats")]
+    public float enemyHealth = 10.0f;
+    [SerializeField] private float damage = 2.0f;
 
     private NavMeshAgent agent;
     private EnemyState state = EnemyState.Patrolling;
