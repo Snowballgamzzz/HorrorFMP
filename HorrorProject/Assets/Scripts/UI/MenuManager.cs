@@ -32,6 +32,10 @@ public class MenuManager : MonoBehaviour
     public GameObject ammo;
     public GameObject player;
     public GameObject pauseMenuCanvas;
+    public GameObject playerGun;
+
+    [Header("Script References")]
+    Gun gun;
 
     FPController cam;
 
@@ -52,6 +56,7 @@ public class MenuManager : MonoBehaviour
         backImage = backButton.GetComponent<Image>();
         quitImage = quitButton.GetComponent<Image>();
         optionsImage = optionsButton.GetComponent<Image>();
+        gun = playerGun.GetComponent<Gun>();
 
         resolutions = Screen.resolutions;
 
@@ -96,7 +101,12 @@ public class MenuManager : MonoBehaviour
     {
         pauseMenuCanvas.SetActive(false);
         healthBar.SetActive(true);
-        ammo.SetActive(true);
+
+        if (gun.doesPlayerHaveGun)
+        {
+            ammo.SetActive(true);
+        }
+
         paused = false;
         cam.isPaused = false;
         Cursor.lockState = CursorLockMode.Locked;

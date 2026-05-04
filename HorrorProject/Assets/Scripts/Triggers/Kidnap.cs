@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,6 +15,7 @@ public class Kidnap : MonoBehaviour
     public GameObject bloodDialogue;
     public GameObject lightDialogue;
     public GameObject blackOut;
+    public GameObject glassBreak;
 
     [Header("Floats")]
     public float triggerSeconds;
@@ -21,12 +23,16 @@ public class Kidnap : MonoBehaviour
     [Header("Strings")]
     public string LevelName;
 
+    [Header("Audio")]
+    AudioSource source;
+
     void Start()
     {
         carObjectOne.SetActive(false);
         carObjectTwo.SetActive(false);
         person.SetActive(false);
         blackOut.SetActive(false);
+        source = glassBreak.GetComponent<AudioSource>();
     }
 
     public void OnTriggerEnter(Collider other)
@@ -50,6 +56,7 @@ public class Kidnap : MonoBehaviour
         streetLight.SetActive(false);
         player.transform.LookAt(streetLight.transform);
         lightDialogue.SetActive(true);
+        source.Play();
 
         yield return new WaitForSeconds(triggerSeconds);
         lightDialogue.SetActive(false);

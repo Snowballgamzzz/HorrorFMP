@@ -11,6 +11,8 @@ public class DocumentInteraction : MonoBehaviour, IInteractable
     public GameObject playerHealth;
     public GameObject playerAmmo;
 
+    Gun gun;
+
     FPController FPController;
     public GameObject player;
 
@@ -20,6 +22,7 @@ public class DocumentInteraction : MonoBehaviour, IInteractable
     void Start()
     {
         FPController = player.GetComponent<FPController>();
+        gun = playerGun.GetComponent<Gun>();
         document.SetActive(false);
         playerCrosshair.SetActive(true);
     }
@@ -60,12 +63,16 @@ public class DocumentInteraction : MonoBehaviour, IInteractable
             documentInspector.SetActive(false);
             document.SetActive(false);
             playerCrosshair.SetActive(true);
-            playerGun.SetActive(true);
             playerHealth.SetActive(true);
-            playerAmmo.SetActive(true);
             FPController.isInspectingDocument = false;
             FPController.mouseSensitivity = 3f;
             isViewingThisDocument = false;
+
+            if (gun.doesPlayerHaveGun)
+            {
+                playerAmmo.SetActive(true);
+                playerGun.SetActive(true);
+            }
         }
     }
 }

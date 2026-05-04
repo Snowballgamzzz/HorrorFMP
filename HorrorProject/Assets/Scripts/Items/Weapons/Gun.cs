@@ -17,6 +17,7 @@ public class Gun : MonoBehaviour
     public float reloadTime = 1f;
 
     private bool isReloading = false;
+    public bool doesPlayerHaveGun;
 
     private float nextTimeToFire = 0f;
 
@@ -32,6 +33,7 @@ public class Gun : MonoBehaviour
     {
         controller = GetComponentInParent<FPController>();
         currentAmmo = maxAmmo;
+        doesPlayerHaveGun = false;
     }
 
     private void Update()
