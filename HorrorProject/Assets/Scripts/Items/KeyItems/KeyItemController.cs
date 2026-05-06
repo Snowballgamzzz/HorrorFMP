@@ -19,6 +19,9 @@ public class KeyItemController : MonoBehaviour, IInteractable
     public GameObject valve;
     ValveController controller;
 
+    public GameObject tutorialUI;
+    InventoryTutorial tutorial;
+
     public enum KeyTypes
     {
         Office,

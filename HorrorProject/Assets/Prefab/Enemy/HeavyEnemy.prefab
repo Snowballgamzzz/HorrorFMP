@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAgent
   initialState: 4
-  navMeshAgent: {fileID: 0}
+  navMeshAgent: {fileID: 6963930035120218207}
   config: {fileID: 11400000, guid: ce970962f3aec5a498b91fd08bc025fb, type: 2}
   playerTransform: {fileID: 0}
   isCollidingWithPlayer: 0
