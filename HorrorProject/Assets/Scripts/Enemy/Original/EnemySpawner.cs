@@ -41,6 +41,15 @@ public class EnemySpawner : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             playerIsInRoom = true;
+            canSpawn = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            playerIsInRoom = false;
         }
     }
 }

@@ -31,11 +31,16 @@ public class Gun : MonoBehaviour
 
     public GameObject player;
 
+    public GameObject tutorialUI;
+    GunTutorial tutorial;
+
     void Start()
     {
         controller = player.GetComponent<FPController>();
         currentAmmo = maxAmmo;
-        doesPlayerHaveGun = false;
+        doesPlayerHaveGun = true;
+        tutorial = tutorialUI.GetComponent<GunTutorial>();
+        StartCoroutine(tutorial.showGunTutorial());
     }
 
     private void Update()
@@ -46,6 +51,8 @@ public class Gun : MonoBehaviour
         currentClipString = currentClip.ToString();
 
         AmmoText.text = currentAmmoString + " / " + currentClipString;
+
+        doesPlayerHaveGun = true;
     }
 
     public void Shoot(InputAction.CallbackContext context)

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebc60ca69e44b6e4ca51df1768143d57, type: 3}
   m_Name: Ammo Box
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
-  itemName: Ammo Box
+  itemName: 9mm Bullets
   statToChange: 3
