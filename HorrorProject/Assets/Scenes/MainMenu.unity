@@ -3364,7 +3364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42d590f9ccac37e41bba1f8ed8685490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuManager
-  LevelName: MainLevel
+  LevelName: Street
   resumeSprite: {fileID: 0}
   backSprite: {fileID: 0}
   quitSprite: {fileID: 0}
@@ -3377,8 +3377,9 @@ MonoBehaviour:
   ammo: {fileID: 0}
   player: {fileID: 0}
   pauseMenuCanvas: {fileID: 0}
+  playerGun: {fileID: 0}
   audioMixer: {fileID: 24100000, guid: 70309840080d9004488eec696af06a33, type: 2}
-  resolutionDropdown: {fileID: 0}
+  resolutionDropdown: {fileID: 1471255753}
 --- !u!4 &1611257991
 Transform:
   m_ObjectHideFlags: 0
