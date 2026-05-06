@@ -14,6 +14,7 @@ public class EnemyController : MonoBehaviour
     [Header("References")]
     [SerializeField] private Transform player;
     [SerializeField] private Transform[] patrolPoints;
+    public PlayerHealth playerHealth;
 
     [Header("Settings")]
     [SerializeField] private float patrolWaitTime = 2f;
@@ -33,10 +34,14 @@ public class EnemyController : MonoBehaviour
     private bool isWaiting;
     private float timeSinceLostPlayer;
     private bool isBiting;
+    private bool playerIsNear;
+    private bool isCollidingWithPlayer;
+    private bool canAttack;
 
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        playerHealth = player.GetComponent<PlayerHealth>();
     }
 
     private void Start()
@@ -54,7 +59,7 @@ public class EnemyController : MonoBehaviour
 
                 Patrol();
 
-                if (distanceToPlayer <= detectionRange && CanSeePlayer())
+                if (distanceToPlayer <= detectionRange && CanSeePlayer() || playerIsNear)
                 {
                     state = EnemyState.Following;
                 }
@@ -114,6 +119,13 @@ public class EnemyController : MonoBehaviour
         agent.isStopped = true;
         var direction = (player.position - transform.position).normalized;
         direction.y = 0f;
+
+        if (canAttack)
+        {
+            playerHealth.health -= damage;
+            playerHealth.healthBar.value = playerHealth.health;
+            StartCoroutine(attackCoolDown());
+        }
 
         if (direction != Vector3.zero)
         {
@@ -207,5 +219,37 @@ public class EnemyController : MonoBehaviour
         }
 
         return true;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerIsNear = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerIsNear = false;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+            isCollidingWithPlayer = true;
+        }
+    }
+
+    private IEnumerator attackCoolDown()
+    {
+        canAttack = false;
+        yield return new WaitForSeconds(5);
+        canAttack = true;
     }
 }

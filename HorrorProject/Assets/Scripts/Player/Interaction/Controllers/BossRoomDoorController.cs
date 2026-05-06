@@ -28,7 +28,7 @@ public class BossRoomDoorController : MonoBehaviour, IInteractable
 
     public void OpenDoor()
     {
-        doorAnim.Play("DoorOpen", 0, 0.0f);
+        doorAnim.Play("ShutterOpen", 0, 0.0f);
         isDoorOpen = true;
     }
 

@@ -123,7 +123,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3624459695234096990}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SingleDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}

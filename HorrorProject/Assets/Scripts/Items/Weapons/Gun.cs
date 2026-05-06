@@ -29,9 +29,11 @@ public class Gun : MonoBehaviour
     private string currentAmmoString;
     private string currentClipString;
 
+    public GameObject player;
+
     void Start()
     {
-        controller = GetComponentInParent<FPController>();
+        controller = player.GetComponent<FPController>();
         currentAmmo = maxAmmo;
         doesPlayerHaveGun = false;
     }
@@ -48,7 +50,7 @@ public class Gun : MonoBehaviour
 
     public void Shoot(InputAction.CallbackContext context)
     {
-        if (!controller.isPaused)
+        if (!controller.isPaused && !controller.isAtPC && !controller.isAtKeypad && !controller.isInspectingDocument && doesPlayerHaveGun)
         {
             if (isReloading)
             {

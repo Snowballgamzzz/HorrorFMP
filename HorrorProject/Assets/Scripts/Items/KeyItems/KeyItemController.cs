@@ -9,6 +9,16 @@ public class KeyItemController : MonoBehaviour, IInteractable
 
     Item item;
 
+    public GameObject vent;
+    private Animator ventAnim;
+    private AudioSource ventSource;
+
+    private AudioSource gasSource;
+    public GameObject audioObject;
+    public GameObject gas;
+    public GameObject valve;
+    ValveController controller;
+
     public enum KeyTypes
     {
         Office,
@@ -23,6 +33,10 @@ public class KeyItemController : MonoBehaviour, IInteractable
     public void Start()
     {
         item = GetComponent<Item>();
+        ventAnim = vent.GetComponent<Animator>();
+        ventSource = vent.GetComponent<AudioSource>();
+        gasSource = audioObject.GetComponent<AudioSource>();
+        controller = valve.GetComponent<ValveController>();
     }
 
     public void Interact()
@@ -33,6 +47,9 @@ public class KeyItemController : MonoBehaviour, IInteractable
             {
                 inventory.hasOfficeKey = true;
                 item.PickUpItem();
+                gasSource.Play();
+                controller.isGasOn = true;
+                gas.SetActive(true);
             }
             else if (keytypes == KeyTypes.TestChamber)
             {
@@ -53,6 +70,8 @@ public class KeyItemController : MonoBehaviour, IInteractable
             {
                 inventory.hasSecurityRoomKey = true;
                 item.PickUpItem();
+                ventSource.Play();
+                ventAnim.Play("VentFall");
             }
         }
     }
