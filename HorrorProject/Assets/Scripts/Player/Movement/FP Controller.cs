@@ -80,7 +80,7 @@ public class FPController : MonoBehaviour
         UpdateGravity();
         UpdateLook();
         UpdateMovement();
-        HandleFootsteps();
+        //HandleFootsteps();
     }
 
     void UpdateGround()
@@ -139,40 +139,40 @@ public class FPController : MonoBehaviour
             var factor = acceleration * Time.deltaTime;
             velocity.x = Mathf.Lerp(velocity.x, input.x, factor);
             velocity.z = Mathf.Lerp(velocity.z, input.z, factor);
-            isMoving = true;
+            //isMoving = true;
         }
-        else
-        {
-            isMoving = false;
-        }
+        //else
+        //{
+        //    isMoving = false;
+        //}
 
         //character controller movement
         controller.Move(velocity * Time.deltaTime);
     }
 
-    void HandleFootsteps()
-    {
-        float currentStepInterval = (Input.GetKey(KeyCode.LeftShift) ? sprintStepInterval : walkStepInterval);
+    //void HandleFootsteps()
+    //{
+    //    float currentStepInterval = (Input.GetKey(KeyCode.LeftShift) ? sprintStepInterval : walkStepInterval);
 
-        if (IsGrounded && isMoving && Time.time > nextStepTime && controller.velocity.magnitude > velocityThreshold)
-        {
-            PlayFootstepSounds();
-            nextStepTime = Time.time + currentStepInterval;
-        }
-        else
-        {
-            StopFootstepSounds();
-        }
-    }
+    //    if (IsGrounded && isMoving && Time.time > nextStepTime && controller.velocity.magnitude > velocityThreshold)
+    //    {
+    //        PlayFootstepSounds();
+    //        nextStepTime = Time.time + currentStepInterval;
+    //    }
+    //    else
+    //    {
+    //        StopFootstepSounds();
+    //    }
+    //}
 
-    void PlayFootstepSounds()
-    {
-        footstepSource.Play();
-    }
+    //void PlayFootstepSounds()
+    //{
+    //    footstepSource.Play();
+    //}
 
-    void StopFootstepSounds()
-    {
-        footstepSource.Stop();
-    }
+    //void StopFootstepSounds()
+    //{
+    //    footstepSource.Stop();
+    //}
 
 }

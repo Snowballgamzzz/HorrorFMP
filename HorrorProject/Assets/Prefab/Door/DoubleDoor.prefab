@@ -238,7 +238,8 @@ GameObject:
   - component: {fileID: 5648635429391497632}
   - component: {fileID: 2261891620509023402}
   - component: {fileID: 8781246896946637281}
-  m_Layer: 0
+  - component: {fileID: 6318553798175643328}
+  m_Layer: 6
   m_Name: DoubleDoor
   m_TagString: InteractiveObject
   m_Icon: {fileID: 0}
@@ -305,6 +306,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.11445141, y: 2.9698045, z: 3}
   m_Center: {x: 4.9976315, y: 1.5309159, z: 0.027686417}
+--- !u!114 &6318553798175643328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4756615529420386001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a147985ca89b3f48ae3bf645097755a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorController
+  isDoorOpen: 0
 --- !u!1 &7034824446493846584
 GameObject:
   m_ObjectHideFlags: 0

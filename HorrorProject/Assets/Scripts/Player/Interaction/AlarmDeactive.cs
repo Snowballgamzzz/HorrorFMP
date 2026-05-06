@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 public class AlarmDeactive : MonoBehaviour, IInteractable
 {
-    [SerializeField] private List<GameObject> objects;
+    public List<GameObject> objects;
+    private int currentDeactiveIndex = 0;
+
     public void Interact()
     {
-        foreach (var obj in objects)
-        {
-            obj.SetActive(false);
-        }
+        Debug.Log("YAY");
+        objects[currentDeactiveIndex].SetActive(false);
     }
 }

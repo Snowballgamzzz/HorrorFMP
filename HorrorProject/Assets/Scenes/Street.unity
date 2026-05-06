@@ -758,6 +758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseTutorialTrigger
   player: {fileID: 861158445}
+  doOnce: 0
 --- !u!65 &64948496
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1315,6 +1316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionTutorialTrigger
   player: {fileID: 861158445}
+  doOnce: 0
 --- !u!65 &153343588
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19263,6 +19265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SprintingTutorialTrigger
   player: {fileID: 861158445}
+  doOnce: 0
 --- !u!65 &1672658374
 BoxCollider:
   m_ObjectHideFlags: 0

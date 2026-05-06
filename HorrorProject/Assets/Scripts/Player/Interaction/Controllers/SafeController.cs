@@ -93,6 +93,7 @@ public class SafeController : MonoBehaviour, IInteractable
             playerCamera.transform.rotation = camStartObject.transform.rotation;
             playerCamera.transform.position = camStartObject.transform.position;
             playerCamera.transform.SetParent(camStartObject.transform);
+            playerCamera.transform.localScale = camStartObject.transform.localScale;
         }
     }
 
